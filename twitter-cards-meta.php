@@ -2,11 +2,11 @@
 /*
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: http://wpdeveloper.net/free-plugin/twitter-cards-meta/
- * Description: The Best and Easiest Way to Add Twitter Cards Metadata in WordPress Site. Enable Twitter Cards for Your Blog at ease.
- * Version: 1.0.0
+ * Description: The Best Way to Add Twitter Cards Metadata in WordPress Site. Enable Summary and Photo Cards Easily, With Control.
+ * Version: 1.1.1
  * Author: WPDeveloper.net
  * Author URI: http://wpdeveloper.net
- * License: GPL2+
+ * License: GPLv2+
  * Text Domain: twitter-cards-meta
  * Min WP Version: 2.5.0
  * Max WP Version: 3.5.2
@@ -33,7 +33,6 @@ function twitter_cards_meta()
 {
 global $post;
 $twcm_options=twcm_get_options();
-
 	#twitter cards
 	if(is_single() || is_page()) {
 		  $site_twitter_username=$twcm_options['site_twitter_username'];
@@ -51,11 +50,19 @@ $twcm_options=twcm_get_options();
 		  $twitter_url    = get_permalink();
 		  $twitter_title  = get_the_title();
 		  $twitter_thumbs = twcm_get_image();
-	 		  
+	 	  if($twcm_options['use_default_card_type_sitewide'])
+		  {
+		  $twitter_card_type=$twcm_options['default_card_type'];
+		  }
+		  else
+		  {
+		  $twitter_card_type=get_post_meta($post->ID,'_twcm_twitter_card_type',true);
+		  if($twitter_card_type==""){$twitter_card_type=$twcm_options['default_card_type'];}
+		  }	  
 		?>
 
 <!-- Twitter Cards Meta By WPDeveloper.net -->
-<meta name="twitter:card" value="summary"/>
+<meta name="twitter:card" value="<?php echo $twitter_card_type ?>"/>
 <meta name="twitter:site" value="@<?php echo $site_twitter_username;?>" />
 <meta name="twitter:creator" value="@<?php echo $creator_twitter_username; ?>" />
 <meta name="twitter:url" value="<?php echo $twitter_url; ?>"/>
@@ -64,7 +71,7 @@ $twcm_options=twcm_get_options();
 <meta name="twitter:image" value="<?php echo $twitter_thumbs; ?>" />
 <!-- Twitter Cards Meta By WPDeveloper.net -->
 
-		<?
+		<?php
       
     }
 	elseif(is_home()) # elseif of if(is_single() || is_page())
@@ -73,7 +80,7 @@ $twcm_options=twcm_get_options();
 	?>
 
 <!-- Twitter Cards Meta By WPDeveloper.net -->
-<meta name="twitter:card" value="summary"/>
+<meta name="twitter:card" value="<?php echo $twcm_options['default_card_type'];?>"/>
 <meta name="twitter:site" value="@<?php echo $twcm_options['site_twitter_username'];?>" />
 <meta name="twitter:creator" value="@<?php echo $twcm_options['site_twitter_username'];?>" />
 <meta name="twitter:url" value="<?php echo get_bloginfo('url'); ?>"/>
@@ -144,6 +151,11 @@ function twcm_get_image()
 	{
 	$image = get_post_meta($post->ID, $twcm_options['image_custom_field'] , true);
 	}
+	elseif($twcm_options['use_image_from']=='featured_image')
+	{
+		$images = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+		$image  = $images[0];
+	}
 	
 	if($image=="")
 	{
@@ -173,7 +185,7 @@ function twcm_setting_links($links, $file) {
         $twcm_setting = plugin_basename(__FILE__);
     }
     if ($file == $twcm_setting) {
-        $twcm_settings_link = '<a href="options-general.php?page=twitter-cards-meta">Settings</a>';
+        $twcm_settings_link = '<a href="options-general.php?page='.TWCM_PLUGIN_SLUG.'">Settings</a>';
         array_unshift($links, $twcm_settings_link);
     }
     return $links;
@@ -205,4 +217,63 @@ function twcm_extra_user_profile_fields( $user ) { ?>
 <span class="description">Please enter your Twitter Account User name, eg: oneTarek</span>
 </td>
 </table>
-<?php }?>
+<?php }
+
+#=============================Add Card Type Selection Option on Post Edit page ======================
+
+function twcm_add_meta_boxes()
+{
+
+	$post_types=get_post_types('','names'); 
+	$rempost = array('attachment','revision','nav_menu_item');#exclude these post_types
+	$post_types = array_diff($post_types,$rempost);
+	foreach($post_types as $post_type)
+		{
+		add_meta_box('twcm_twitter_card_type', 'Twitter Card Type', 'twcm_card_type_metabox', $post_type, 'side', 'low');
+		}
+
+}
+
+
+function twcm_card_type_metabox()
+{
+global $post;
+
+	$twcm_options=twcm_get_options();
+	$twitter_card_type=get_post_meta($post->ID,'_twcm_twitter_card_type', true);
+	if($twitter_card_type==""){$twitter_card_type='default';}
+	?>
+	<div style="padding:5px 10px;">
+	<input type="radio" name="twitter_card_type" id="twitter_card_type_default" value="default" <?php echo ($twitter_card_type=="default")?' checked="checked"':''; ?>/> <label for="twitter_card_type_default">Default<span style="color:#CCCCCC"> (<?php echo $twcm_options['default_card_type'];?>)</span></label><br />
+	<input type="radio" name="twitter_card_type" id="twitter_card_type_summary" value="summary" <?php echo ($twitter_card_type=="summary")?' checked="checked"':''; ?>/> <label for="twitter_card_type_summary">Summary</label><br />
+	<input type="radio" name="twitter_card_type" id="twitter_card_type_photo" value="photo" <?php echo ($twitter_card_type=="photo")?' checked="checked"':''; ?>/> <label for="twitter_card_type_photo">Photo</label><br />
+	<input type="hidden" name="twcm_nonce" value="<?php echo wp_create_nonce('twcm_nonce')?>" />
+	</div>
+	<?php
+}#end function twcm_page_metabox()
+	
+function twcm_save_post_page_metabox($post_id)
+{
+	if(!isset($_POST['twitter_card_type'])){return $post_id;}
+	#check nonce
+	if (!isset($_POST['twcm_nonce']) || !wp_verify_nonce($_POST['twcm_nonce'], 'twcm_nonce')) {return $post_id;}
+	#check capabilities
+	if (!current_user_can('edit_post', $post_id)) {return $post_id;}
+	#exit on autosave
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {return $post_id;}
+	#saving data
+	if($_POST['twitter_card_type']=='default')
+	{
+	delete_post_meta($post_id,'_twcm_twitter_card_type');
+	}
+	else
+	{
+	update_post_meta($post_id,'_twcm_twitter_card_type', $_POST['twitter_card_type']);
+	}
+}#end function twcm_save_post_page_metabox()
+
+add_action('add_meta_boxes', 'twcm_add_meta_boxes');
+add_action('save_post', 'twcm_save_post_page_metabox');
+
+
+?>
