@@ -29,27 +29,27 @@ function twcm_options_page()
 	{
 		$options=array(
 				'site_twitter_username'=>trim($_POST['site_twitter_username']),
-				'use_authors_twitter_account'=>intval($_POST['use_authors_twitter_account']), 
+				'use_authors_twitter_account'=>isset($_POST['use_authors_twitter_account']) ? intval($_POST['use_authors_twitter_account']) : '', 
 				'use_image_from'=>$_POST['use_image_from'], 
 				'image_custom_field'=>trim($_POST['image_custom_field']),
 				'default_image'=>(trim($_POST['default_image'])=='Link to Default Image')? '' : trim($_POST['default_image']),
 				'home_page_description'=>(trim($_POST['home_page_description'])=='Enter a description for home page, keep it under 200 characters')? '' : wp_filter_nohtml_kses(trim($_POST['home_page_description'])),  #wp_filter_nohtml_kses is smililar with strip_tags() function
 				'default_card_type'=>$_POST['default_card_type'], 
-				'use_default_card_type_sitewide'=>$_POST['use_default_card_type_sitewide']
+				'use_default_card_type_sitewide'=>isset($_POST['use_default_card_type_sitewide']) ? $_POST['use_default_card_type_sitewide'] : ''
 		
 		);	
-	update_option('twcm_options',$options);
+	update_option('twcm_options', apply_filters( 'tcm_options_post', $options ) );
 	$twcm_options=$options;
 	}#end if(isset($_POST['save_options']))
-	
-	
-	echo "<div style=\"width: 1010px; padding-left: 10px;\" class=\"wrap\">";
-		echo "<div style=\"width: 700px; float:left;\">";
-		echo '<div id="icon-options-general" class="icon32"></div>';
-		echo "<h2>Twitter Cards Meta Options</h2>";
-		//oneTarek
-		global $current_user;
-		?>
+	//oneTarek
+	global $current_user;	
+	?>
+	 <div style="width: 1010px; padding-left: 10px;" class="wrap">
+		 <div style="width: 700px; float:left;">
+		 <div id="icon-options-general" class="icon32"></div>
+		 <h2>Twitter Cards Meta Options</h2>
+
+		
 			<script type="text/ecmascript">
             	function show_custom_field_name_row()
 				{
@@ -79,11 +79,31 @@ function twcm_options_page()
             <tr><td   align="left"> Default Image URL: </td><td><input type="text" name="default_image" value="<?php echo ($twcm_options['default_image'])? $twcm_options['default_image']:'Link to Default Image';?>" size="30"  style="width:300px;" onblur="javascript: if(this.value=='') {this.value='Link to Default Image';}" onclick="javascript: if(this.value=='Link to Default Image') {this.value='';}" /></td></tr>
 
 
-            <tr><td  align="left">
+            <tr><td valign="top" align="left">
+	    
             	Twitter Cards Type Selection: </td><td>
+		<div class="tmc_rad_opt">
             	<input type="radio" name="default_card_type" id="default_card_type_1" value="summary" <?php echo ($twcm_options['default_card_type']=='summary')?' checked="checked"': '';?> /> <label for="default_card_type_1">Summary Cards</label><br />
                 <input type="radio" name="default_card_type" id="default_card_type_2" value="photo" <?php echo ($twcm_options['default_card_type']=='photo')?' checked="checked"': '';?> /> <label for="default_card_type_2"> Photo Cards </label><br />
-                <input type="radio" name="default_card_type" id="default_card_type_3" value="player" <?php echo ($twcm_options['default_card_type']=='player')?' checked="checked"': '';?> disabled="disabled" /> <label for="default_card_type_3" style="color:#CCCCCC;" > Player Cards (Coming soon in future update, Stay updated)</label>           
+		
+                <!--input type="radio" name="default_card_type" id="default_card_type_3" value="player" <?php echo ($twcm_options['default_card_type']=='player')?' checked="checked"': '';?> disabled="disabled" /> <label for="default_card_type_3" style="color:#CCCCCC;" > Player Cards </label><br /-->
+		
+                <input type="radio" name="default_card_type" id="default_card_type_4" value="summary_large_image" <?php echo ($twcm_options['default_card_type']=='summary_large_image')?' checked="checked"': '';?> <?php if( ! ACTIVE_LARGE_PHOTO ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_4" <?php if( ! ACTIVE_LARGE_PHOTO ) { ?>style="color:#CCCCCC;"<?php } ?> > <b>Summary Card With Large Image</b> <?php if( ! ACTIVE_LARGE_PHOTO ) { ?>(<a href="http://wpdeveloper.net/go/TCM-SCLI" target="_blank"><b>available as premium addon</b></a>)<?php } ?></label><br />
+
+                		<input type="radio" name="default_card_type" id="default_card_type_6" value="product" <?php echo ($twcm_options['default_card_type']=='product')?' checked="checked"': '';?> <?php if( ! ACTIVE_PRODUCT_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_6" <?php if( ! ACTIVE_PRODUCT_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > <b>Product Card</b> <?php if( ! ACTIVE_PRODUCT_CARD ) { ?>(<a href="http://wpdeveloper.net/go/TCM-PC" target="_blank"><b>available as premium addon</b></a>)<?php } ?></label><br />
+		
+		<input type="radio" name="default_card_type" id="default_card_type_5" value="product_woo" <?php echo ($twcm_options['default_card_type']=='product_woo')?' checked="checked"': '';?> <?php if( ! ACTIVE_WOO_PRODUCT ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_5" <?php if( ! ACTIVE_WOO_PRODUCT ) { ?>style="color:#CCCCCC;"<?php } ?> > Products for WooCommerce <?php if( ! ACTIVE_WOO_PRODUCT ) { ?>(comming soon)<?php } ?></label><br />
+		
+		<input type="radio" name="default_card_type" id="default_card_type_7" value="gallery" <?php echo ($twcm_options['default_card_type']=='gallery')?' checked="checked"': '';?> <?php if( ! ACTIVE_GALLERY_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_7" <?php if( ! ACTIVE_GALLERY_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > Photo Gallery <?php if( ! ACTIVE_GALLERY_CARD ) { ?>(comming soon)<?php } ?></label><br /><br /><br />
+		
+		<!--- <input type="radio" name="default_card_type" id="default_card_type_8" value="app" <?php echo ($twcm_options['default_card_type']=='app')?' checked="checked"': '';?> <?php if( ! ACTIVE_APP_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_8" <?php if( ! ACTIVE_APP_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > App Card <?php if( ! ACTIVE_APP_CARD ) { ?>(comming soon)<?php } ?></label><br /><br /><br />
+		
+		<input type="radio" name="default_card_type" id="default_card_type_9" value="player" <?php echo ($twcm_options['default_card_type']=='player')?' checked="checked"': '';?> <?php if( ! ACTIVE_PLAYER_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_9" <?php if( ! ACTIVE_PLAYER_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > Player Card <?php if( ! ACTIVE_PLAYER_CARD ) { ?>(comming soon)<?php } ?></label><br /><br /><br />
+		--->
+		<div class="tmc_card_extra_option_meta">
+			<?php do_action( 'tmc_card_extra_option_meta' ); ?>
+		</div>
+	    </div>
             	</td></tr>
 
             <tr><td   align="left"> Description For Home Page :</td><td> <textarea  name="home_page_description" cols="10" rows="4" style="width:300px;" onblur="javascript: if(this.value=='') {this.value='Enter a description for home page, keep it under 200 characters';}"  onclick="javascript: if(this.value=='Enter a description for home page, keep it under 200 characters') {this.value='';}"  ><?php echo ($twcm_options['home_page_description'])? $twcm_options['home_page_description'] :'Enter a description for home page, keep it under 200 characters';?></textarea></td></tr>
@@ -99,7 +119,7 @@ function twcm_options_page()
             </form>
            
             
-            <div style=" text-align:center; margin-top:60px;"><a target="_blank" href="http://wpdeveloper.net"><img src="<?php echo TWCM_PLUGIN_URL."/wpdevlogo.png" ?>" /></a></div>
+            <div style=" text-align:center; margin-top:60px;"><b>Love Twitter Cards? You must check this new <a href="http://wpdeveloper.net/go/TCM-PC" target="_blank"><b>Product Card</b></a></b><br /><a target="_blank" href="http://wpdeveloper.net/go/TCM-PC"><img style="border:2px solid #ffffff;" src="<?php echo TWCM_PLUGIN_URL."/example-product-card.jpg" ?>" width="500" alt="Twitter Product Card" /></a></div>
 <?php
 		
 		echo "</div>";
