@@ -2,8 +2,8 @@
 /*
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: http://wpdeveloper.net/free-plugin/twitter-cards-meta/
- * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Product Card & Summary Card with Large Image. Advance Automated settings. Product Card & Summary Card with Large Image is now available as addon.
- * Version: 2.0.3
+ * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Product Card & Summary Card with Large Image. Advance Automated settings. Product Card & Summary Card with Large Image is now available as addon. Works with WooCommerce as well.
+ * Version: 2.0.4
  * Author: WPDeveloper.net
  * Author URI: http://wpdeveloper.net
  * License: GPLv2+
@@ -272,11 +272,12 @@ global $post;
 	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="http://wpdeveloper.net/go/TCM-PC"><b>Product Card (available as Addon)</b></a></label><br /></p>
 	<?php } ?>
 
-	<p><a target="blank" href="http://wpdeveloper.net/go/TCM-Addons"><b> All Cards Type Coming Soon</b></a></p>
-	<!--- <?php if( ! ACTIVE_WOO_PRODUCT ) { ?>
-	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="#">Product for WooCommerce (available as premium addon)</a></label><br /></p>
+	<?php if( ! ACTIVE_WOO_PRODUCT ) { ?>
+	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="http://wpdeveloper.net/go/TCM-PCfWC">Product Card for WooCommerce (available as premium Addon)</a></label><br /></p>
 	<?php } ?>
-	
+
+	<p><a target="blank" href="http://wpdeveloper.net/go/TCM-Addons"><b> All Cards Type Coming Soon</b></a></p>
+	<!--- 
 	
 	<?php if( ! ACTIVE_GALLERY_CARD ) { ?>
 	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="#">Gallery Card (available as premium addon)</a></label><br /></p>
@@ -326,9 +327,9 @@ if ( current_user_can( 'install_plugins' ) )
 	global $current_user ;
         $user_id = $current_user->ID;
         /* Check that the user hasn't already clicked to ignore the message */
-	if ( ! get_user_meta($user_id, 'twcm_ignore_notice202') ) {
+	if ( ! get_user_meta($user_id, 'twcm_ignore_notice203') ) {
         echo '<div class="updated"><p>'; 
-        printf(__('<b>[Notice]</b> We are happy to announce <strong><a href="http://wpdeveloper.net/go/TCM-PC" target="_blank">Twitter Product Card</a></strong> addon! This is must have if you are selling something or showcasing any product in <b>Twitter</b>. With <b><a href="http://wpdeveloper.net/go/TCM-SCLI" target="_blank">Summary Card with Large Image </a></b>this is our 2nd addon. <a href="http://wpdeveloper.net/go/TCM-PC" target="_blank">Must Check</a>! <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore1=0' ));
+        printf(__('<b>[Notice]</b> Are you selling using <strong>WooCommerce?</strong> We just released <strong><a href="http://wpdeveloper.net/go/TCM-PCfWC" target="_blank">Twitter Product Card for WooCommerce</a> </strong> addon! This is a must have if you are using <strong>Twitter</strong>. Remember <strong>Photo Card + Summary Card = </strong> <b><a href="http://wpdeveloper.net/go/TCM-SCLI" target="_blank">Summary Card with Large Image</a></b>. <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore1=0' ));
         echo "</p></div>";
 	}
     }
@@ -341,7 +342,7 @@ function twcm_nag_ignore1() {
         $user_id = $current_user->ID;
         /* If user clicks to ignore the notice, add that to their user meta */
         if ( isset($_GET['twcm_nag_ignore1']) && '0' == $_GET['twcm_nag_ignore1'] ) {
-             add_user_meta($user_id, 'twcm_ignore_notice202', 'true', true);
+             add_user_meta($user_id, 'twcm_ignore_notice203', 'true', true);
 	}
 }
 

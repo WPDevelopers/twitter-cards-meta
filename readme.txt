@@ -1,10 +1,10 @@
 === Twitter Cards Meta ===
 Contributors: Asif2BD, onetarek
 Donate link: http://wpdeveloper.net/go/TCM
-Tags: Twitter Card, Summary Card, Photo Card, Summary Card with Large Image, Product Card, Twitter SEO, Twitter Meta, Twitter, Yoast, Player Cards, Product Cards, Meta,  Add Metadata, Add Twitter Meta, Social, Ecommernce Card
+Tags: Twitter Card, Summary Card, Photo Card, Summary Card with Large Image, Product Card, WooCemmerce, Twitter SEO, Twitter Meta, Twitter, Yoast, Player Cards, WooCemmerce Product Card, Add Twitter Meta, Social, Ecommernce Card
 Requires at least: 2.5.0
 Tested up to: 4.2
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,15 +12,17 @@ The Only Complete Twitter Cards Plugin in WordPress. Supports Product Card & Sum
 
 == Description ==
 
-**[Twitter Product Card](http://wpdeveloper.net/go/TCM-PC) is here!!!** 
+**[Twitter Product Card](http://wpdeveloper.net/go/TCM-PC) is also available for [WooCommerce](http://wpdeveloper.net/go/TCM-PCfWC)!!!** 
 
 [WPDeveloper.net](http://wpdeveloper.net/) brings **[Twitter Cards Meta](http://wpdeveloper.net/go/TCM)** for all WordPress user for free. Adding Twitter Cards meta was never this easy. 100% validate meta according to Twitter and get sure approval within minutes. Most complete Twitter Cards plugin in WordPress
 
 [Twitter Cards](http://wpdeveloper.net/free-plugin/twitter-cards-meta/) increase your Twitter visibility & Brand value. And with this plugin you don't have to worry about the markup, because its very important to get the markup correct, otherwise Twitter will not accept your application.
 
-**Twitter [Summary Card with Large Image](http://wpdeveloper.net/go/TCM-SCLI) is here!!!**
-
 **Do you know now Twitter provide detail [Analytics](https://analytics.twitter.com/)? To get the analytics you need 'Twitter Cards Meta'.**
+
+**Twitter Photo Card + Summary Card = [Summary Card with Large Image](http://wpdeveloper.net/go/TCM-SCLI) is here!!!**
+
+[youtube http://www.youtube.com/watch?v=f1q3bgKbq_U]
 
 
 Please read Twitter Cards' detail [guideline and terms](https://dev.twitter.com/docs/cards) before proceed.
@@ -31,7 +33,7 @@ Please read Twitter Cards' detail [guideline and terms](https://dev.twitter.com/
 *   Photo Card
 *   **[Summary Card with Large Image](http://wpdeveloper.net/go/TCM-SCLI)** (available as Addon)
 *   **[Product Card](http://wpdeveloper.net/go/TCM-PC)**  (available as Addon)
-*   Products Card for WooCommerce (coming soon)
+*   **[Product Card for WooCommerce](http://wpdeveloper.net/go/TCM-PCfWC) (available as Addon)
 *   Gallery Card (coming soon)
 *   App Card for (coming soon)
 *   Player Card (coming soon)
@@ -40,6 +42,7 @@ Though there are other possible ways to add Twitter Cards metadata but this plug
 
 **Feature Includes:**
 
+*   **New** [Product Card for WooCommerce](http://wpdeveloper.net/go/TCM-PCfWC) is availablen now.
 *   **New** [Product Card](http://wpdeveloper.net/go/TCM-PC) is availablen now.
 *   Auto Add Twitter Cards Meta Tags in every single posts/pages.
 *   For multi-author blog this plugin could add a extra field in 'Author Bio/Profile' page to add his own Twitter Account.
@@ -105,6 +108,7 @@ You are good to go!
 
 **For more detail guide you should follow [this](http://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab2) page.**
 
+[youtube http://www.youtube.com/watch?v=f1q3bgKbq_U]
 
 
 == Frequently Asked Questions ==
@@ -139,6 +143,11 @@ More FAQs - [here](http://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 
 == Changelog ==
+
+= 2.0.4 (March 25, 2015) =
+* Video tutorial added,
+* Bug Fixed
+* Create Addon Comparibility with Product Card for WooCommerce.
 
 = 2.0.3 (March 17, 2015) =
 * Quick bug fix.
@@ -211,13 +220,13 @@ More FAQs - [here](http://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Upgrade Notice ==
 
-= 2.0.3 =
-**Must Update** Fix several bugs, and now its compatible to Product Card addons.
+= 2.0.4 =
+**Must Update** Bug fix, Video Tutorial, and now its compatible to Product Card addons, even for WooCommerce.
 
 
 
 == Donation ==
 
-You may donate to WordPress Foundation.
+Buy the pro addon if you want to support the development.
 
 http://wpdeveloper.net/go/TCM

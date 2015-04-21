@@ -33,7 +33,7 @@
 		<ul>
 		<li><a href="http://wpdeveloper.net/go/TCM-SCLI" target="_blank">Summary Card with Large Image</a>(Available)</li>
 		<li><a href="http://wpdeveloper.net/go/TCM-PC" target="_blank">Products Card</a>(Available)</li>
-        <li><a href="http://wpdeveloper.net/go/TCM-Addons" target="_blank">- For WooCommerce (Coming)</a></li>
+        <li><a href="http://wpdeveloper.net/go/TCM-PCfWC" target="_blank">- For WooCommerce</a> (Available)</li>
 		<li><a href="http://wpdeveloper.net/go/TCM-Addons" target="_blank">Photo Gallery Card (Coming)</a></li>
 		<li><a href="http://wpdeveloper.net/go/TCM-Addons" target="_blank">Player Card (Coming)</a></li>
 	    <li><a href="http://wpdeveloper.net/go/TCM-Addons" target="_blank">App Cards (Coming)</a></li>
