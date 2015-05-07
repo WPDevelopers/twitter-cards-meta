@@ -1,5 +1,6 @@
 <div style="float:right; width:300px; min-height:400px; margin-top:50px;">
-<a class='button-primary' href="http://wpdeveloper.net/free-plugin/twitter-cards-meta/" target="_blank">Plugin Homepage</a>  <a  class='button-primary' style="color:#FFF600;" href="http://wpdeveloper.net/go/twmc-rating" target="_blank">Rate This Plugin</a>
+<a class='button-primary' href="http://wpdeveloper.net/free-plugin/twitter-cards-meta/" target="_blank">Plugin Homepage</a>  <a  class='button-primary' style="color:#FFF600;" href="http://wpdeveloper.net/go/twmc-rating" target="_blank">Rate This Plugin</a> 
+<div style="height:10px;"></div>
 <table class="widefat">
 	<thead>
 		<tr><th>To Enable Twitter Cards:<th></tr>
@@ -21,6 +22,33 @@
 		</td>
 	</tbody>
 </table>
+<div style="height:10px;"></div>
+<table class="widefat">
+	<thead>
+		<tr><th><center><a class='button-primary' href="http://wpdeveloper.net/go/TCM-Setup" target="_blank">Twitter Cards Meta Setup Service</a></center><th></tr>
+	</thead>
+	<tbody>
+		<td>
+		<h3>Service Includes:</h3>
+		    <ol>
+            <li>Core Plugin Install</li>
+            <li>Core Plugin Option Setup</li>
+            <li>One Twitter Card Type Setup (for additional you have to buy separately)</li>
+            <li>Addon install & setup (you have to buy addon separately)</li>
+            <li>Submission to Twitter for Whitelisting</li>
+            <li>Configure one post and send a test Tweet with new Twitter Card.</li>
+            <li>Extended Option to setup Product Card for ecommerce site.</li>
+            </ol>
+            <center><b><a href="http://wpdeveloper.net/go/TCM-Setup" target="_blank">Let us help, we have team of Avenger</a></b></center>
+		</td>
+	</tbody>
+</table>
+
+
+
+
+
+
 
 <div style="height:10px;"></div>
 

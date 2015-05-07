@@ -104,7 +104,9 @@ function twcm_options_page()
 			<?php do_action( 'tmc_card_extra_option_meta' ); ?>
 		</div>
 	    </div>
-            	</td></tr>
+            	</td>
+            	</tr>
+
 
             <tr><td   align="left"> Description For Home Page :</td><td> <textarea  name="home_page_description" cols="10" rows="4" style="width:300px;" onblur="javascript: if(this.value=='') {this.value='Enter a description for home page, keep it under 200 characters';}"  onclick="javascript: if(this.value=='Enter a description for home page, keep it under 200 characters') {this.value='';}"  ><?php echo ($twcm_options['home_page_description'])? $twcm_options['home_page_description'] :'Enter a description for home page, keep it under 200 characters';?></textarea></td></tr>
  			
@@ -112,13 +114,19 @@ function twcm_options_page()
             <td>
             <input type="checkbox" name="use_default_card_type_sitewide" value="1" <?php echo ($twcm_options['use_default_card_type_sitewide'])?' checked="checked"': '';?> />
             <span style="color:#FF0000;"> (<strong>*Caution! </strong> If you select this option, all posts will show the default Cards type you selected. Individual Card type selection per post will not work)</span>
+
             </td></tr> 		
-                        
-            <tr><td><br /><br /><br /><input type="submit" name="save_options" value="Save Options" class='button-primary'/></td><td>&nbsp;</td></tr>
+                 
+   
+	      
+            <tr><td>
+            <br /><br /><br /><input type="submit" name="save_options" value="Save Options" class='button-primary'/></td><td>&nbsp;</td></tr>
             </table>
             </form>
-           
-            
+           <div style=" text-align:center; margin-top:10px;">
+			<strong>Do you need help in <a href="http://wpdeveloper.net/go/TCM-Setup" target="_blank">setting</a> up</strong> <strong><a href="http://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a>? </strong>Now we could help you <strong>Install, setup</strong>, file for card validation to Twitter, setup addon or help you fix any issue related to Twitter Card. We have a team of <strong>Avenger</strong>! <strong><a href="http://wpdeveloper.net/go/TCM-Setup" target="_blank">Click here!</a></strong>
+            </div>
+
             <div style=" text-align:center; margin-top:60px;"><b>Photo Card + Summary Card = <a href="http://wpdeveloper.net/go/TCM-SCLI" target="_blank"><b>Summery Card with Large Image</b></a></b><b> [Must Have]</b><br /><a target="_blank" href="http://wpdeveloper.net/go/TCM-SCLI"><img style="border:2px solid #ffffff;" src="<?php echo TWCM_PLUGIN_URL."/example-summary-card-with-large-image.jpg" ?>" width="500" alt="Summery Card with Large Image" /></a></div>
 <?php
 		
