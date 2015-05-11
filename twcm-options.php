@@ -94,7 +94,9 @@ function twcm_options_page()
 		
 		        <input type="radio" name="default_card_type" id="default_card_type_5" value="product_woo" <?php echo ($twcm_options['default_card_type']=='product_woo')?' checked="checked"': '';?> <?php if( ! ACTIVE_WOO_PRODUCT ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_5" <?php if( ! ACTIVE_WOO_PRODUCT ) { ?>style="color:#CCCCCC;"<?php } ?> > Product Card for WooCommerce <?php if( ! ACTIVE_WOO_PRODUCT ) { ?>(<a href="http://wpdeveloper.net/go/TCM-PCfWC" target="_blank"><b>available as premium addon</b></a>)<?php } ?></label><br />
 		
-		<input type="radio" name="default_card_type" id="default_card_type_7" value="gallery" <?php echo ($twcm_options['default_card_type']=='gallery')?' checked="checked"': '';?> <?php if( ! ACTIVE_GALLERY_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_7" <?php if( ! ACTIVE_GALLERY_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > Photo Gallery <?php if( ! ACTIVE_GALLERY_CARD ) { ?>(comming soon)<?php } ?></label><br /><br /><br />
+		<input type="radio" name="default_card_type" id="default_card_type_7" value="gallery" <?php echo ($twcm_options['default_card_type']=='gallery')?' checked="checked"': '';?> <?php if( ! ACTIVE_GALLERY_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_7" <?php if( ! ACTIVE_GALLERY_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > Photo Gallery <?php if( ! ACTIVE_GALLERY_CARD ) { ?>(comming soon)<?php } ?></label><br />
+
+		<input type="radio" name="default_card_type" id="default_card_type_7" value="gallery" <?php echo ($twcm_options['default_card_type']=='gallery')?' checked="checked"': '';?> <?php if( ! ACTIVE_APP_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_7" <?php if( ! ACTIVE_APP_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > App Card <?php if( ! ACTIVE_APP_CARD ) { ?>(comming soon)<?php } ?></label><br /><br /><br />
 		
 		<!--- <input type="radio" name="default_card_type" id="default_card_type_8" value="app" <?php echo ($twcm_options['default_card_type']=='app')?' checked="checked"': '';?> <?php if( ! ACTIVE_APP_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_8" <?php if( ! ACTIVE_APP_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > App Card <?php if( ! ACTIVE_APP_CARD ) { ?>(comming soon)<?php } ?></label><br /><br /><br />
 		
@@ -128,6 +130,13 @@ function twcm_options_page()
             </div>
 
             <div style=" text-align:center; margin-top:60px;"><b>Photo Card + Summary Card = <a href="http://wpdeveloper.net/go/TCM-SCLI" target="_blank"><b>Summery Card with Large Image</b></a></b><b> [Must Have]</b><br /><a target="_blank" href="http://wpdeveloper.net/go/TCM-SCLI"><img style="border:2px solid #ffffff;" src="<?php echo TWCM_PLUGIN_URL."/example-summary-card-with-large-image.jpg" ?>" width="500" alt="Summery Card with Large Image" /></a></div>
+
+<div style=" text-align:center; margin-top:100px;">
+<center><a target="_blank" href="https://wpdeveloper.net/"><img src="<?php echo TWCM_PLUGIN_URL."/wpdeveloper-logo-2.png" ?>" alt="Summery Card with Large Image" /></a>
+</center>
+ <br />
+<b>Created With Love By  <a href="https://wpdeveloper.net/" target="_blank"><b>WPDeveloper.net</b></a></b>
+</div>
 <?php
 		
 		echo "</div>";

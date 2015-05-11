@@ -1,5 +1,7 @@
 <div style="float:right; width:300px; min-height:400px; margin-top:50px;">
-<a class='button-primary' href="http://wpdeveloper.net/free-plugin/twitter-cards-meta/" target="_blank">Plugin Homepage</a>  <a  class='button-primary' style="color:#FFF600;" href="http://wpdeveloper.net/go/twmc-rating" target="_blank">Rate This Plugin</a> 
+<a target="_blank" href="https://wpdeveloper.net/"><img src="<?php echo TWCM_PLUGIN_URL."/wpdeveloper-logo-2.png" ?>" alt="Summery Card with Large Image" /></a>
+
+<a class='button-primary' href="https://wpdeveloper.net/free-plugin/twitter-cards-meta/" target="_blank">Plugin Homepage</a>  <a  class='button-primary' style="color:#FFF600;" href="https://wpdeveloper.net/go/twmc-rating" target="_blank">Rate This Plugin</a> 
 <div style="height:10px;"></div>
 <table class="widefat">
 	<thead>
@@ -18,14 +20,14 @@
             <li>You will get email when Twitter approves your request*.</li>
              *It could take 05min to Few Hr. 
             </ol>
-            <center><b><a href="http://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab2" target="_blank">Complete Twitter Cards Setup Guide</a></b></center>
+            <center><b><a href="https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab2" target="_blank">Complete Twitter Cards Setup Guide</a></b></center>
 		</td>
 	</tbody>
 </table>
 <div style="height:10px;"></div>
 <table class="widefat">
 	<thead>
-		<tr><th><center><a class='button-primary' href="http://wpdeveloper.net/go/TCM-Setup" target="_blank">Twitter Cards Meta Setup Service</a></center><th></tr>
+		<tr><th><center><a class='button-primary' href="https://wpdeveloper.net/go/TCM-Setup" target="_blank">Twitter Cards Meta Setup Service</a></center><th></tr>
 	</thead>
 	<tbody>
 		<td>
@@ -39,7 +41,7 @@
             <li>Configure one post and send a test Tweet with new Twitter Card.</li>
             <li>Extended Option to setup Product Card for ecommerce site.</li>
             </ol>
-            <center><b><a href="http://wpdeveloper.net/go/TCM-Setup" target="_blank">Let us help, we have team of Avenger</a></b></center>
+            <center><b><a href="https://wpdeveloper.net/go/TCM-Setup" target="_blank">Let us help, we have team of Avenger</a></b></center>
 		</td>
 	</tbody>
 </table>
@@ -59,12 +61,12 @@
 	<tbody>
 		<td>
 		<ul>
-		<li><a href="http://wpdeveloper.net/go/TCM-SCLI" target="_blank">Summary Card with Large Image</a>(Available)</li>
-		<li><a href="http://wpdeveloper.net/go/TCM-PC" target="_blank">Products Card</a>(Available)</li>
-        <li><a href="http://wpdeveloper.net/go/TCM-PCfWC" target="_blank">- For WooCommerce</a> (Available)</li>
-		<li><a href="http://wpdeveloper.net/go/TCM-Addons" target="_blank">Photo Gallery Card (Coming)</a></li>
-		<li><a href="http://wpdeveloper.net/go/TCM-Addons" target="_blank">Player Card (Coming)</a></li>
-	    <li><a href="http://wpdeveloper.net/go/TCM-Addons" target="_blank">App Cards (Coming)</a></li>
+		<li><a href="https://wpdeveloper.net/go/TCM-SCLI" target="_blank">Summary Card with Large Image</a>(Available)</li>
+		<li><a href="https://wpdeveloper.net/go/TCM-PC" target="_blank">Products Card</a>(Available)</li>
+        <li><a href="https://wpdeveloper.net/go/TCM-PCfWC" target="_blank">- For WooCommerce</a> (Available)</li>
+		<li><a href="https://wpdeveloper.net/go/TCM-Addons" target="_blank">Photo Gallery Card (Coming)</a></li>
+		<li><a href="https://wpdeveloper.net/go/TCM-Addons" target="_blank">Player Card (Coming)</a></li>
+	    <li><a href="https://wpdeveloper.net/go/TCM-Addons" target="_blank">App Cards (Coming)</a></li>
 		</ul>	
 		</td>
 	</tbody>
@@ -79,12 +81,12 @@
 	<tbody>
 		<td>
 		<ul>
-		<li><a href="http://wpdeveloper.net" target="_blank">WPdeveloper.net</a></li>
-		<li><a href="http://wpdeveloper.net/go/TCM" target="_blank">Plugin Home</a></li>
-                <li><a href="http://wpdeveloper.net/support" target="_blank">Support Page</a></li>
-		<!--<li><a href="http://wpdeveloper.net/support" target="_blank">Support Forums</a></li>-->
-		<li><a href="http://wpdeveloper.net/go/WPAR-Pro" target="_blank">WP Author Report</a></li>
-		<li><a href="http://wpdeveloper.net/affiliate-area/" target="_blank">Become an Affiliate</a></li>
+		<li><a href="https://wpdeveloper.net" target="_blank">WPdeveloper.net</a></li>
+		<li><a href="https://wpdeveloper.net/go/TCM" target="_blank">Plugin Home</a></li>
+                <li><a href="https://wpdeveloper.net/support" target="_blank">Support Page</a></li>
+		<!--<li><a href="https://wpdeveloper.net/support" target="_blank">Support Forums</a></li>-->
+		<li><a href="https://wpdeveloper.net/go/WPAR-Pro" target="_blank">WP Author Report</a></li>
+		<li><a href="https://wpdeveloper.net/affiliate-area/" target="_blank">Become an Affiliate</a></li>
 		</ul>	
 		</td>
 	</tbody>

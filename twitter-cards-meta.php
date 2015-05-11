@@ -1,11 +1,11 @@
 <?php
 /*
  * Plugin Name: Twitter Cards Meta
- * Plugin URI: http://wpdeveloper.net/free-plugin/twitter-cards-meta/
+ * Plugin URI: https://wpdeveloper.net/go/TCM
  * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Product Card & Summary Card with Large Image. Advance Automated settings. Works with WooCommerce as well.
- * Version: 2.1.1
+ * Version: 2.1.2
  * Author: WPDeveloper.net
- * Author URI: http://wpdeveloper.net
+ * Author URI: https://wpdeveloper.net/
  * License: GPLv2+
  * Text Domain: twitter-cards-meta
  * Min WP Version: 2.5.0
@@ -21,6 +21,8 @@ define( 'ACTIVE_LARGE_PHOTO', apply_filters( 'active_large_photo', false ) );
 define( 'ACTIVE_WOO_PRODUCT', apply_filters( 'active_woo_product', false ) );
 define( 'ACTIVE_PRODUCT_CARD', apply_filters( 'active_product_card', false ) );
 define( 'ACTIVE_GALLERY_CARD', apply_filters( 'active_gallery_card', false ) );
+define( 'ACTIVE_APP_CARD', apply_filters( 'active_app_card', false ) );
+define( 'ACTIVE_PLAYER_CARD', apply_filters( 'active_player_card', false ) );
 
 include_once(TWCM_PLUGIN_PATH.'twcm-options.php');
 include_once(TWCM_PLUGIN_PATH.'wpdev-dashboard-widget.php');
@@ -242,7 +244,7 @@ function twcm_add_meta_boxes()
 	$post_types = array_diff($post_types,$rempost);
 	foreach($post_types as $post_type)
 		{
-		add_meta_box('twcm_twitter_card_type', 'Select a Twitter Card Type', 'twcm_card_type_metabox', $post_type, 'normal', 'low');
+		add_meta_box('twcm_twitter_card_type', 'Select a Twitter Card Type', 'twcm_card_type_metabox', $post_type, 'side', 'high');
 		}
 
 }
@@ -265,19 +267,27 @@ global $post;
 	<?php do_action( 'tcm_addon_cmb' ); ?>
 	
 	<?php if( ! ACTIVE_LARGE_PHOTO ) { ?>
-	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="http://wpdeveloper.net/go/TCM-SCLI"><b>Photo + Summary Card (Addon)</b></a></label><br /></p>
+	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-SCLI"><b>Photo + Summary Card (Addon)</b></a></label><br /></p>
 	<?php } ?>
 
 	<?php if( ! ACTIVE_PRODUCT_CARD ) { ?>
-	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="http://wpdeveloper.net/go/TCM-PC"><b>Product Card (Addon)</b></a></label><br /></p>
+	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-PC"><b>Product Card (Addon)</b></a></label><br /></p>
 	<?php } ?>
 
 	<?php if( ! ACTIVE_WOO_PRODUCT ) { ?>
-	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="http://wpdeveloper.net/go/TCM-PCfWC">WooCommerce Product Card (Addon)</a></label><br /></p>
+	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-PCfWC">WooCommerce Product Card (Addon)</a></label><br /></p>
 	<?php } ?>
 
-	<p><a target="blank" href="http://wpdeveloper.net/go/TCM-Addons"><b> All Cards Type Coming Soon</b></a></p>
-	<p><a target="blank" href="http://wpdeveloper.net/go/TCM-Setup"><b> Let us help setting up your Twitter Card</b></a></p>
+	<?php if( ! ACTIVE_APP_CARD ) { ?>
+	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-Survey">App Card (Addon)</a></label><br /></p>
+	<?php } ?>
+
+	<?php if( ! ACTIVE_PLAYER_CARD ) { ?>
+	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-Survey">Player Card (Addon)</a></label><br /></p>
+	<?php } ?>
+
+	<p><a target="blank" href="https://wpdeveloper.net/go/TCM-Survey"><b> All Cards Type Coming Soon</b></a></p>
+	<p><a target="blank" href="https://wpdeveloper.net/go/TCM-Setup"><b> Let us help setting up your Twitter Card</b></a></p>
 	<!--- 
 	
 	<?php if( ! ACTIVE_GALLERY_CARD ) { ?>
@@ -328,9 +338,9 @@ if ( current_user_can( 'install_plugins' ) )
 	global $current_user ;
         $user_id = $current_user->ID;
         /* Check that the user hasn't already clicked to ignore the message */
-	if ( ! get_user_meta($user_id, 'twcm_ignore_notice211') ) {
+	if ( ! get_user_meta($user_id, 'twcm_ignore_notice212') ) {
         echo '<div class="updated"><p>'; 
-        printf(__('<strong>Do you need help in <a href="http://wpdeveloper.net/go/TCM-Setup" target="_blank">setting</a> up</strong> <strong><a href="http://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a>? </strong>Now we could help you <strong>Install, setup</strong>, file for card validation to Twitter, setup addon or help you fix any issue related to Twitter Card. We have a team of <strong>Avenger</strong>! <strong><a href="http://wpdeveloper.net/go/TCM-Setup" target="_blank">Click here!</a></strong> <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
+        printf(__('We are in the final stage of bringing <strong>Player Card, App Card &amp; Gallery Card</strong> support for Twitter Cards Meta. <a href="https://wpdeveloper.net/go/TCM-Survey" target="_blank">Let us know your thoughts</a>!<strong> </strong>If you ever need help, we have <a href="https://wpdeveloper.net/go/TCM-Free-Support" target="_blank">Free </a> &amp; <a href="https://wpdeveloper.net/go/TCM-Setup" target="_blank">Premium Support</a>. And if <strong>you are happy</strong> with us, dont forget to <strong><a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">rate us</a> in WordPress.org</strong>, it takes only <strong>30 sec! </strong>But help us to feel your <strong>love</strong> and keep working! <a href="%1$s">[Hide Notice]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
         echo "</p></div>";
 	}
     }
@@ -343,7 +353,7 @@ function twcm_nag_ignore() {
         $user_id = $current_user->ID;
         /* If user clicks to ignore the notice, add that to their user meta */
         if ( isset($_GET['twcm_nag_ignore']) && '0' == $_GET['twcm_nag_ignore'] ) {
-             add_user_meta($user_id, 'twcm_ignore_notice211', 'true', true);
+             add_user_meta($user_id, 'twcm_ignore_notice212', 'true', true);
 	}
 }
 
