@@ -1,15 +1,15 @@
 === Twitter Cards Meta ===
 Contributors: Asif2BD, onetarek
 Donate link: https://wpdeveloper.net/go/TCM
-Tags: Twitter Card, Summary Card, Photo Card, Summary Card with Large Image, Product Card, WooCommerce, Twitter SEO, Twitter Meta, Twitter, Yoast, Player Cards, WooCommerce Product Card, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Yoast Meta
-SEO Meta, Twitter, Player Card, Cards
+Tags: Twitter Card, Summary Card, Photo Card, Summary Card with Large Image, Product Card, WooCommerce, Gallery Card, Photo Gallery Card, Twitter Gallery, Twitter SEO, Twitter Meta, Twitter, Yoast, Player Cards, WooCommerce Product Card, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Yoast Meta
+SEO Meta, Twitter, Player Card, Cards, Twitter Analytics, Twitter Ads
 Requires at least: 2.5.0
 Tested up to: 4.2.2
-Stable tag: 2.1.2
+Stable tag: 2.1.3
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The Only Complete Twitter Cards Plugin in WordPress. Supports Product Card & Summary Card with Large Image. Advance Automated Settings.
+The Only Complete Twitter Card Plugin in WordPress. Supports Product, Gallery & Summary Card with Large Image. Advance Automated Settings.
 
 == Description ==
 
@@ -19,11 +19,9 @@ The Only Complete Twitter Cards Plugin in WordPress. Supports Product Card & Sum
 
 **Do you know now Twitter provide detail [Analytics](https://analytics.twitter.com/)? To get the analytics you need 'Twitter Cards Meta'.**
 
-**Twitter Photo Card + Summary Card = [Summary Card with Large Image](https://wpdeveloper.net/go/TCM-SCLI) is available!!!**
+**Twitter Photo Card + Summary Card = [Summary Card with Large Image](https://wpdeveloper.net/go/TCM-SCLI) will increase your Twitter interaction!!!**
 
-We are in the final stage of bringing **Player Card, App Card & Gallery Card** support for Twitter Cards Meta. [Let us know your thoughts](https://wpdeveloper.net/go/TCM-Survey)!
-
-[youtube http://www.youtube.com/watch?v=f1q3bgKbq_U]
+We are in the final stage of bringing **Player Card & App Card** support for Twitter Cards Meta. [Let us know your thoughts](https://wpdeveloper.net/go/TCM-Survey)!
 
 **[Twitter Product Card](https://wpdeveloper.net/go/TCM-PC) is also available for [WooCommerce](https://wpdeveloper.net/go/TCM-PCfWC)!!!** 
 
@@ -36,8 +34,8 @@ Please read Twitter Cards' detail [guideline and terms](https://dev.twitter.com/
 *   **[Summary Card with Large Image](https://wpdeveloper.net/go/TCM-SCLI)** (available as Addon)
 *   **[Product Card](https://wpdeveloper.net/go/TCM-PC)**  (available as Addon)
 *   **[Product Card for WooCommerce](https://wpdeveloper.net/go/TCM-PCfWC)** (available as Addon)
-*   Gallery Card [(coming soon)](https://wpdeveloper.net/go/TCM-Survey)
-*   App Card for [(coming soon)](https://wpdeveloper.net/go/TCM-Survey)
+*   **[Gallery Card](https://wpdeveloper.net/go/TCM-GC)**  (available as Addon)
+*   App Card [(coming soon)](https://wpdeveloper.net/go/TCM-Survey)
 *   Player Card [(coming soon)](https://wpdeveloper.net/go/TCM-Survey)
 
 
@@ -50,8 +48,9 @@ Though there are other possible ways to add Twitter Cards metadata but this plug
 
 **Feature Includes:**
 
-*   **New** [Product Card for WooCommerce](https://wpdeveloper.net/go/TCM-PCfWC) is availablen now.
-*   **New** [Product Card](https://wpdeveloper.net/go/TCM-PC) is availablen now.
+*   **New** [Gallery Card](https://wpdeveloper.net/go/TCM-GC) is available now.
+*   **New** [Product Card](https://wpdeveloper.net/go/TCM-PC) is available now.
+*   **New** [Product Card for WooCommerce](https://wpdeveloper.net/go/TCM-PCfWC) is available now.
 *   Auto Add Twitter Cards Meta Tags in every single posts/pages.
 *   For multi-author blog this plugin could add a extra field in 'Author Bio/Profile' page to add his own Twitter Account.
 *   Ability to get Attachment image automatically.
@@ -60,7 +59,6 @@ Though there are other possible ways to add Twitter Cards metadata but this plug
 *   Possible to add Twitter Cards meta tags even in Home Page.
 *   You could include a custom Description for Home Page.
 *   Though its not a good practice but you could include a default Image, its specially helpful for home page.
-*   **Complete code refactor** 
 *   **Addon supported** 
 *   **Summary Card with Large Image added as Addon** 
 *   Photo Card Support Added.
@@ -68,7 +66,7 @@ Though there are other possible ways to add Twitter Cards metadata but this plug
 *   Meta Box in post panel to select individual post's 'Card Type'.
 *   Option to force all posts (old and future posts) to a certain 'Cards Type'. It will override individual post's selection. 
 *   Now Attached and Featured image both work properly and user have the option to select which type of image he wants.
-*   **New** Validate 100% with W3C Markup Validation Service!
+*   Validate 100% with W3C Markup Validation Service!
 
 > <strong>Contribute in GitHub!!</strong><br>
 > We are OpenSource & GPL and available in GitHub. You could also contribute. [Click here](https://github.com/ARCommunications/Twitter-Cards-Meta)!
@@ -160,10 +158,17 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 5. Twitter Preview Tool - Live Example.
 6. Product Card - Live Example.
 7. Product Card For WooCommerce - Live Example.
+8. Gallery Card - Live Example.
 
 
 
 == Changelog ==
+
+= 2.1.3 (May 19, 2015) =
+* Gallery Card support enabled
+* Card type selection value saving issue solved
+* Updates in Addon functions.
+
 
 = 2.1.2 (May 11, 2015) =
 * Bug fix
@@ -257,8 +262,8 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Upgrade Notice ==
 
-= 2.1.2 =
-**Must Update** Several bug fix, post edit panel menu issue fixed, ready for new card type.
+= 2.1.3 =
+**Must Update** Brings Gallery Card support, multiple bug fix, now more stable.
 
 
 

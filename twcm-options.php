@@ -84,9 +84,8 @@ function twcm_options_page()
             	Twitter Cards Type Selection: </td><td>
 		<div class="tmc_rad_opt">
             	<input type="radio" name="default_card_type" id="default_card_type_1" value="summary" <?php echo ($twcm_options['default_card_type']=='summary')?' checked="checked"': '';?> /> <label for="default_card_type_1">Summary Cards</label><br />
+
                 <input type="radio" name="default_card_type" id="default_card_type_2" value="photo" <?php echo ($twcm_options['default_card_type']=='photo')?' checked="checked"': '';?> /> <label for="default_card_type_2"> Photo Cards </label><br />
-		
-                <!--input type="radio" name="default_card_type" id="default_card_type_3" value="player" <?php echo ($twcm_options['default_card_type']=='player')?' checked="checked"': '';?> disabled="disabled" /> <label for="default_card_type_3" style="color:#CCCCCC;" > Player Cards </label><br /-->
 		
                 <input type="radio" name="default_card_type" id="default_card_type_4" value="summary_large_image" <?php echo ($twcm_options['default_card_type']=='summary_large_image')?' checked="checked"': '';?> <?php if( ! ACTIVE_LARGE_PHOTO ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_4" <?php if( ! ACTIVE_LARGE_PHOTO ) { ?>style="color:#CCCCCC;"<?php } ?> > <b>Summary Card With Large Image</b> <?php if( ! ACTIVE_LARGE_PHOTO ) { ?>(<a href="http://wpdeveloper.net/go/TCM-SCLI" target="_blank"><b>available as premium addon</b></a>)<?php } ?></label><br />
 
@@ -94,14 +93,13 @@ function twcm_options_page()
 		
 		        <input type="radio" name="default_card_type" id="default_card_type_5" value="product_woo" <?php echo ($twcm_options['default_card_type']=='product_woo')?' checked="checked"': '';?> <?php if( ! ACTIVE_WOO_PRODUCT ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_5" <?php if( ! ACTIVE_WOO_PRODUCT ) { ?>style="color:#CCCCCC;"<?php } ?> > Product Card for WooCommerce <?php if( ! ACTIVE_WOO_PRODUCT ) { ?>(<a href="http://wpdeveloper.net/go/TCM-PCfWC" target="_blank"><b>available as premium addon</b></a>)<?php } ?></label><br />
 		
-		<input type="radio" name="default_card_type" id="default_card_type_7" value="gallery" <?php echo ($twcm_options['default_card_type']=='gallery')?' checked="checked"': '';?> <?php if( ! ACTIVE_GALLERY_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_7" <?php if( ! ACTIVE_GALLERY_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > Photo Gallery <?php if( ! ACTIVE_GALLERY_CARD ) { ?>(comming soon)<?php } ?></label><br />
+		        <input type="radio" name="default_card_type" id="default_card_type_7" value="gallery" <?php echo ($twcm_options['default_card_type']=='gallery')?' checked="checked"': '';?> <?php if( ! ACTIVE_GALLERY_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_7" <?php if( ! ACTIVE_GALLERY_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > Gallery Card <?php if( ! ACTIVE_GALLERY_CARD ) { ?>(<a href="http://wpdeveloper.net/go/TCM-GC" target="_blank"><b>available as premium addon</b></a>)<?php } ?></label><br />
 
-		<input type="radio" name="default_card_type" id="default_card_type_7" value="gallery" <?php echo ($twcm_options['default_card_type']=='gallery')?' checked="checked"': '';?> <?php if( ! ACTIVE_APP_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_7" <?php if( ! ACTIVE_APP_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > App Card <?php if( ! ACTIVE_APP_CARD ) { ?>(comming soon)<?php } ?></label><br /><br /><br />
+		        <input type="radio" name="default_card_type" id="default_card_type_8" value="app" <?php echo ($twcm_options['default_card_type']=='app')?' checked="checked"': '';?> <?php if( ! ACTIVE_APP_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_8" <?php if( ! ACTIVE_APP_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > App Card <?php if( ! ACTIVE_APP_CARD ) { ?>(<a href="https://wpdeveloper.net/go/TCM-Survey" target="_blank"><b>comming soon</b></a>)<?php } ?></label><br />
 		
-		<!--- <input type="radio" name="default_card_type" id="default_card_type_8" value="app" <?php echo ($twcm_options['default_card_type']=='app')?' checked="checked"': '';?> <?php if( ! ACTIVE_APP_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_8" <?php if( ! ACTIVE_APP_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > App Card <?php if( ! ACTIVE_APP_CARD ) { ?>(comming soon)<?php } ?></label><br /><br /><br />
+		        <input type="radio" name="default_card_type" id="default_card_type_9" value="player" <?php echo ($twcm_options['default_card_type']=='player')?' checked="checked"': '';?> <?php if( ! ACTIVE_PLAYER_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_9" <?php if( ! ACTIVE_PLAYER_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > Player Card <?php if( ! ACTIVE_PLAYER_CARD ) { ?>(<a href="https://wpdeveloper.net/go/TCM-Survey" target="_blank"><b>comming soon</b></a>)<?php } ?></label><br /><br /><br />
 		
-		<input type="radio" name="default_card_type" id="default_card_type_9" value="player" <?php echo ($twcm_options['default_card_type']=='player')?' checked="checked"': '';?> <?php if( ! ACTIVE_PLAYER_CARD ) { ?>disabled="disabled"<?php } ?> /> <label for="default_card_type_9" <?php if( ! ACTIVE_PLAYER_CARD ) { ?>style="color:#CCCCCC;"<?php } ?> > Player Card <?php if( ! ACTIVE_PLAYER_CARD ) { ?>(comming soon)<?php } ?></label><br /><br /><br />
-		--->
+
 		<div class="tmc_card_extra_option_meta">
 			<?php do_action( 'tmc_card_extra_option_meta' ); ?>
 		</div>
