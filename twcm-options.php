@@ -127,11 +127,11 @@ function twcm_options_page()
 			<strong>Do you need help in <a href="http://wpdeveloper.net/go/TCM-Setup" target="_blank">setting</a> up</strong> <strong><a href="http://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a>? </strong>Now we could help you <strong>Install, setup</strong>, file for card validation to Twitter, setup addon or help you fix any issue related to Twitter Card. We have a team of <strong>Avenger</strong>! <strong><a href="http://wpdeveloper.net/go/TCM-Setup" target="_blank">Click here!</a></strong>
             </div>
 
-            <div style=" text-align:center; margin-top:60px;"><b>Photo Card + Summary Card = <a href="http://wpdeveloper.net/go/TCM-SCLI" target="_blank"><b>Summery Card with Large Image</b></a></b><b> [Must Have]</b><br /><a target="_blank" href="http://wpdeveloper.net/go/TCM-SCLI"><img style="border:2px solid #ffffff;" src="<?php echo TWCM_PLUGIN_URL."/example-summary-card-with-large-image.jpg" ?>" width="500" alt="Summery Card with Large Image" /></a></div>
+            <div style=" text-align:center; margin-top:60px;"><b>Photo Card + Summary Card = <a href="http://wpdeveloper.net/go/TCM-SCLI" target="_blank"><b>Summary Card with Large Image</b></a></b><b> [Must Have]</b><br /><a target="_blank" href="http://wpdeveloper.net/go/TCM-SCLI"><img style="border:2px solid #ffffff;" src="<?php echo TWCM_PLUGIN_URL."/example-summary-card-with-large-image.jpg" ?>" width="500" alt="Summery Card with Large Image" /></a></div>
 
 <div style=" text-align:center; margin-top:100px;">
-<center><a target="_blank" href="https://wpdeveloper.net/"><img src="<?php echo TWCM_PLUGIN_URL."/wpdeveloper-logo-2.png" ?>" alt="Summery Card with Large Image" /></a>
-</center>
+<center><a target="_blank" href="https://wpdeveloper.net/"><img src="<?php echo TWCM_PLUGIN_URL."/wpdeveloper-logo-2.png" ?>" alt="Summary Card with Large Image" /></a>
+</center> 
  <br />
 <b>Created With Love By  <a href="https://wpdeveloper.net/" target="_blank"><b>WPDeveloper.net</b></a></b>
 </div>

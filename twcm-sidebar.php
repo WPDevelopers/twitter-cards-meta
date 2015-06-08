@@ -1,6 +1,6 @@
 <div style="float:right; width:300px; min-height:400px; margin-top:50px;">
 <a target="_blank" href="https://wpdeveloper.net/"><img src="<?php echo TWCM_PLUGIN_URL."/wpdeveloper-logo-2.png" ?>" alt="Summery Card with Large Image" /></a>
-
+<br />
 <a class='button-primary' href="https://wpdeveloper.net/free-plugin/twitter-cards-meta/" target="_blank">Plugin Homepage</a>  <a  class='button-primary' style="color:#FFF600;" href="https://wpdeveloper.net/go/twmc-rating" target="_blank">Rate This Plugin</a> 
 <div style="height:10px;"></div>
 <table class="widefat">
