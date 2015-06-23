@@ -3,7 +3,7 @@
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: https://wpdeveloper.net/go/TCM
  * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Product Card & Summary Card with Large Image. Advance Automated settings. Works with WooCommerce as well.
- * Version: 2.1.5
+ * Version: 2.1.6
  * Author: WPDeveloper.net
  * Author URI: https://wpdeveloper.net/
  * License: GPLv2+
@@ -342,7 +342,8 @@ if ( current_user_can( 'install_plugins' ) )
         /* Check that the user hasn't already clicked to ignore the message */
 	if ( ! get_user_meta($user_id, 'twcm_ignore_notice215') ) {
         echo '<div class="updated"><p>';
-        printf(__('<b>[FYI]</b> Do you know in a single website you could have <strong>multiple <a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Card</a></strong> types? Like you use <strong><a href="http://wpdeveloper.net/go/TCM-SCLI" target="_blank">Summary Card with Large Image</a></strong> as default card, but when you post image you could use <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Photo Card</a></strong> or even <strong><a href="https://wpdeveloper.net/go/TCM-GC" target="_blank">Gallery Card</a> </strong>and when you are talking about a product, use <strong><a href="https://wpdeveloper.net/go/TCM-PC" target="_blank">Product Card</a>. </strong>Makes sense, right? Your audience will love it! <a href="%1$s">[Hide]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
+        printf(__('Do you tweet a lot? <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a> </strong>helped you making your tweet look cooler? <strong>Then, why not write us a simple 1-line thank you note <a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">here</a>? Thanks in advance!</strong>
+        	 <a href="%1$s">[Hide]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
         echo "</p></div>";
 	}
     }
