@@ -2,14 +2,14 @@
 /*
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: https://wpdeveloper.net/go/TCM
- * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Product Card & Summary Card with Large Image. Advance Automated settings. Works with WooCommerce as well.
- * Version: 2.1.6
+ * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Summary Card with Large Image. Advance Automated settings.
+ * Version: 2.3.0
  * Author: WPDeveloper.net
  * Author URI: https://wpdeveloper.net/
  * License: GPLv2+
  * Text Domain: twitter-cards-meta
  * Min WP Version: 2.5.0
- * Max WP Version: 4.2.2
+ * Max WP Version: 4.3
  */
 
 
@@ -262,7 +262,7 @@ global $post;
 	  <p>
 	<input type="radio" name="twitter_card_type" id="twitter_card_type_default" value="default" <?php echo ($twitter_card_type=="default")?' checked="checked"':''; ?>/> <label for="twitter_card_type_default">Default<span style="color:#CCCCCC"> (<?php echo $twcm_options['default_card_type'];?>)</span></label><br /></p>
 	<p><input type="radio" name="twitter_card_type" id="twitter_card_type_summary" value="summary" <?php echo ($twitter_card_type=="summary")?' checked="checked"':''; ?>/> <label for="twitter_card_type_summary">Summary Card</label><br /></p>
-	<p><input type="radio" name="twitter_card_type" id="twitter_card_type_photo" value="photo" <?php echo ($twitter_card_type=="photo")?' checked="checked"':''; ?>/> <label for="twitter_card_type_photo">Photo Card</label><br /></p>
+<!--	<p><input type="radio" name="twitter_card_type" id="twitter_card_type_photo" value="photo" <?php echo ($twitter_card_type=="photo")?' checked="checked"':''; ?>/> <label for="twitter_card_type_photo">Photo Card</label><br /></p> -->
 	
 	<?php do_action( 'tcm_addon_cmb' ); ?>
 	
@@ -270,7 +270,7 @@ global $post;
 	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-SCLI"><b>Photo + Summary Card (Addon)</b></a></label><br /></p>
 	<?php } ?>
 
-	<?php if( ! ACTIVE_PRODUCT_CARD ) { ?>
+<!--	<?php if( ! ACTIVE_PRODUCT_CARD ) { ?>
 	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-PC"><b>Product Card (Addon)</b></a></label><br /></p>
 	<?php } ?>
 
@@ -280,14 +280,14 @@ global $post;
 
 	<?php if( ! ACTIVE_GALLERY_CARD ) { ?>
 	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-GC">Gallery Card (Addon)</a></label><br /></p>
-	<?php } ?> 
+	<?php } ?> -->
 
 	<?php if( ! ACTIVE_APP_CARD ) { ?>
-	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-Survey">App Card (Addon)</a></label><br /></p>
+	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-Survey">App Card (Addon - Coming Soon)</a></label><br /></p>
 	<?php } ?>
 
 	<?php if( ! ACTIVE_PLAYER_CARD ) { ?>
-	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-Survey">Player Card (Addon)</a></label><br /></p>
+	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-Survey">Player Card (Addon - Coming Soon)</a></label><br /></p>
 	<?php } ?>
 
 
@@ -340,9 +340,9 @@ if ( current_user_can( 'install_plugins' ) )
 	global $current_user ;
         $user_id = $current_user->ID;
         /* Check that the user hasn't already clicked to ignore the message */
-	if ( ! get_user_meta($user_id, 'twcm_ignore_notice215') ) {
+	if ( ! get_user_meta($user_id, 'twcm_ignore_notice230') ) {
         echo '<div class="updated"><p>';
-        printf(__('Do you tweet a lot? <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a> </strong>helped you making your tweet look cooler? <strong>Then, why not write us a simple 1-line thank you note <a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">here</a>? Thanks in advance!</strong>
+        printf(__('Major changes to Twitter Cards by Twitter itself. Photo Card, Gallery Card &amp; Product Card are now deprecate. Photo Card + Summary Card = <a href="https://wpdeveloper.net/go/TCM-SCLI" target="_blank">Summary Card with Large Image</a> is the best option now. Dont forget to review <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a> </strong><strong> plugin <a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">here</a>? Thanks in advance!</strong>
         	 <a href="%1$s">[Hide]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
         echo "</p></div>";
 	}
@@ -356,7 +356,7 @@ function twcm_nag_ignore() {
         $user_id = $current_user->ID;
         /* If user clicks to ignore the notice, add that to their user meta */
         if ( isset($_GET['twcm_nag_ignore']) && '0' == $_GET['twcm_nag_ignore'] ) {
-             add_user_meta($user_id, 'twcm_ignore_notice215', 'true', true);
+             add_user_meta($user_id, 'twcm_ignore_notice230', 'true', true);
 	}
 }
 
