@@ -68,41 +68,42 @@ $twcm_options=twcm_get_options();
 		  $twitter_title  = get_the_title();
 		  $twitter_thumbs = twcm_get_image();
 		  
-		  $meta_data_card = '<!-- Twitter Cards Meta By WPDeveloper.net -->
-<meta name="twitter:card" content="'.$twitter_card_type.'" />
-<meta name="twitter:site" content="@'.$site_twitter_username.'" />
-<meta name="twitter:creator" content="@'.$creator_twitter_username.'" />
-<meta name="twitter:url" content="'.$twitter_url.'" />
-<meta name="twitter:title" content="'.$twitter_title.'" />
-<meta name="twitter:description" content="'.twcm_get_description().'" />
-<meta name="twitter:image" content="'.$twitter_thumbs.'" />
-<!-- Twitter Cards Meta By WPDeveloper.net -->
-';
-	 	  	
-		    echo apply_filters( 'tc_final_meta_data', $meta_data_card, $twitter_card_type, $site_twitter_username, $creator_twitter_username, $twitter_url, $twitter_title, twcm_get_description(), $twitter_thumbs );
+		  $cards_meta_data=array(
+		  		"twitter:card" 		=> $twitter_card_type,
+				"twitter:site" 		=> "@".$site_twitter_username,
+				"twitter:creator"	=> "@".$creator_twitter_username,
+				"twitter:url"		=> $twitter_url,
+				"twitter:title"		=> $twitter_title,
+				"twitter:description" => twcm_get_description(), 
+				"twitter:image"		=> $twitter_thumbs
+		  
+		  );
+		  $cards_meta_data = apply_filters( 'tcm_cards_meta_data',$cards_meta_data);
+		  twcm_render_meta_data($cards_meta_data);
+		  	 	  	
+		  // echo apply_filters( 'tc_final_meta_data', $meta_data_card, $twitter_card_type, $site_twitter_username, $creator_twitter_username, $twitter_url, $twitter_title, twcm_get_description(), $twitter_thumbs );
 			  
-		?>
 
-
-		<?php
       
     }
 	elseif(is_home()) # elseif of if(is_single() || is_page())
 	{
 	
-	?>
+	
 
-<!-- Twitter Cards Meta By WPDeveloper.net -->
-<meta name="twitter:card" content="<?php echo $twcm_options['default_card_type'];?>" />
-<meta name="twitter:site" content="@<?php echo $twcm_options['site_twitter_username'];?>" />
-<meta name="twitter:creator" content="@<?php echo $twcm_options['site_twitter_username'];?>" />
-<meta name="twitter:url" content="<?php echo get_bloginfo('url'); ?>" />
-<meta name="twitter:title" content="<?php bloginfo('name'); ?>" />
-<meta name="twitter:description" content="<?php echo twcm_sub_string(esc_attr($twcm_options['home_page_description'])); ?>" />
-<meta name="twitter:image" content="<?php echo $twcm_options['default_image']; ?>" />
-<!-- Twitter Cards Meta By WPDeveloper.net -->
+			  $cards_meta_data=array(
+		  		"twitter:card" 		=> $twcm_options['default_card_type'],
+				"twitter:site" 		=> "@".$twcm_options['site_twitter_username'],
+				"twitter:creator"	=> "@".$twcm_options['site_twitter_username'],
+				"twitter:url"		=> get_bloginfo('url'),
+				"twitter:title"		=> bloginfo('name'),
+				"twitter:description" => twcm_sub_string(esc_attr($twcm_options['home_page_description'])), 
+				"twitter:image"		=> $twcm_options['default_image']
+		  
+		  );
+		 $cards_meta_data = apply_filters( 'tcm_cards_meta_data',$cards_meta_data);
+		 twcm_render_meta_data($cards_meta_data);
 
-    <?php
 	}#end of if(is_single() || is_page())
 
 }#end function twitter_cards_meta()
@@ -110,7 +111,14 @@ $twcm_options=twcm_get_options();
 
 add_action('wp_head','twitter_cards_meta');
 
+function twcm_render_meta_data($cards_meta_data){
+	echo "\r\n<!-- Twitter Cards Meta By WPDeveloper.net -->\r\n";
+	foreach($cards_meta_data as $name=>$content){
+	echo '<meta name="'.esc_attr($name).'" content="'.esc_attr($content).'" />'; echo "\r\n";
+	}
+	echo "<!-- Twitter Cards Meta By WPDeveloper.net -->\r\n\r\n";
 
+}
 
 function twcm_get_description()
 {
@@ -258,7 +266,7 @@ global $post;
 	$twitter_card_type=get_post_meta($post->ID,'_twcm_twitter_card_type', true);
 	if($twitter_card_type==""){$twitter_card_type='default';}
 	?>
-	<div style="padding:5px 10px;" class="tcm_card_options">
+	<div style="padding:5px 10px;" id="tcm_card_options">
 	  <p>
 	<input type="radio" name="twitter_card_type" id="twitter_card_type_default" value="default" <?php echo ($twitter_card_type=="default")?' checked="checked"':''; ?>/> <label for="twitter_card_type_default">Default<span style="color:#CCCCCC"> (<?php echo $twcm_options['default_card_type'];?>)</span></label><br /></p>
 	<p><input type="radio" name="twitter_card_type" id="twitter_card_type_summary" value="summary" <?php echo ($twitter_card_type=="summary")?' checked="checked"':''; ?>/> <label for="twitter_card_type_summary">Summary Card</label><br /></p>
@@ -295,8 +303,7 @@ global $post;
 	
 	
 
-	
-	<div class="tcm_addon_extra_field">
+	<div id="tcm_addon_extra_field">
 	  <table width="100%">
 		    <?php do_action( 'tcm_addon_extra_field' ); ?>
 	  </table>
@@ -360,33 +367,34 @@ function twcm_nag_ignore() {
 	}
 }
 
-add_action( 'admin_head', 'tcm_css' );
-function tcm_css() {
+add_action( 'admin_head', 'tcm_post_editor_script' );
+function tcm_post_editor_script() {
 	  ?>
-	  <style>
-	  .tcm_addon_extra_field th{text-align: left; width: 100px;}
-	  .tcm_addon_extra_field > table > tbody > tr{display: none}
-	  .tcm_addon_extra_field input[type=text]{width: 90%}
+	  <style type="text/css">
+	  #tcm_addon_extra_field th{text-align: left; width: 100px;}
+	  #tcm_addon_extra_field > table > tbody > tr{display: none}
+	  #tcm_addon_extra_field input[type=text]{width: 90%}
 	  </style>
 	  <script type="text/javascript">
 	  jQuery(function($) {
-		    $('.tcm_card_options input[type=radio]').each(function() {
+		    $('#tcm_card_options input[name=twitter_card_type]').each(function() {
 			      if( $(this).is(':checked') ){
 					var id = $(this).attr('id');
 					if( ! $('.' + id).is(':visible') ){
-						  $('.tcm_addon_extra_field > table > tbody > tr').hide();
+						  $('#tcm_addon_extra_field > table > tbody > tr').hide();
 						  $('.' + id).show();
 					}
 			      }
 		    });
-		    $('.tcm_card_options input[type=radio]').click(function() {
+		    $('#tcm_card_options input[name=twitter_card_type]').click(function() {
 			      var id = $(this).attr('id');
 			      if( ! $('.' + id).is(':visible') ){
-					$('.tcm_addon_extra_field > table > tbody > tr').hide();
+					$('#tcm_addon_extra_field > table > tbody > tr').hide();
 					$('.' + id).show();
 			      }
 		    });
 	  });
 	  </script>
-	  <?php
+	  <?php 
+	  do_action("tcm_post_editor_script");
 }
