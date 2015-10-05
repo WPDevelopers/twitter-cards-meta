@@ -95,7 +95,7 @@ $twcm_options=twcm_get_options();
 				"twitter:site" 		=> "@".$twcm_options['site_twitter_username'],
 				"twitter:creator"	=> "@".$twcm_options['site_twitter_username'],
 				"twitter:url"		=> get_bloginfo('url'),
-				"twitter:title"		=> bloginfo('name'),
+				"twitter:title"		=> get_bloginfo('name'),
 				"twitter:description" => twcm_sub_string(esc_attr($twcm_options['home_page_description'])), 
 				"twitter:image"		=> $twcm_options['default_image']
 		  
