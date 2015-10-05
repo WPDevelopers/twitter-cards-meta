@@ -3,13 +3,13 @@
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: https://wpdeveloper.net/go/TCM
  * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Summary Card with Large Image. Advance Automated settings.
- * Version: 2.3.0
+ * Version: 2.4.0
  * Author: WPDeveloper.net
  * Author URI: https://wpdeveloper.net/
  * License: GPLv2+
  * Text Domain: twitter-cards-meta
  * Min WP Version: 2.5.0
- * Max WP Version: 4.3
+ * Max WP Version: 4.3.1
  */
 
 
@@ -81,7 +81,6 @@ $twcm_options=twcm_get_options();
 		  $cards_meta_data = apply_filters( 'tcm_cards_meta_data',$cards_meta_data);
 		  twcm_render_meta_data($cards_meta_data);
 		  	 	  	
-		  // echo apply_filters( 'tc_final_meta_data', $meta_data_card, $twitter_card_type, $site_twitter_username, $creator_twitter_username, $twitter_url, $twitter_title, twcm_get_description(), $twitter_thumbs );
 			  
 
       
@@ -183,10 +182,7 @@ function twcm_get_image()
 	if($image=="")
 	{
 	  #get first image form post content
-	  ob_start();
-	  ob_end_clean();
-	  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-	  $image = isset($matches [1] [0]) ? $matches [1] [0] : '';	  
+	  $image = twcm_get_first_image($post->post_content);	  
 	}
 	if($image==""){$image=$twcm_options['default_image'];}
 	return $image;
@@ -198,7 +194,7 @@ function twcm_get_first_image($text){
       ob_start();
       ob_end_clean();
       $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $text, $matches);
-      $first_img = $matches [1] [0];
+      $first_img = isset($matches [1] [0]) ? $matches [1] [0] : '';	
      return $first_img;
     }
 

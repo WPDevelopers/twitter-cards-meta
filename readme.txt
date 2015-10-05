@@ -3,8 +3,8 @@ Contributors: Asif2BD, onetarek
 Donate link: https://wpdeveloper.net/go/TCM
 Tags: Twitter Card, Summary Card, Photo Card, Summary Card with Large Image, Product Card, WooCommerce, Gallery Card, Photo Gallery Card, Twitter Gallery, Twitter SEO, Twitter Meta, Twitter, Yoast, Player Cards, WooCommerce Product Card, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Yoast Meta, Twitter Analytics, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
 Requires at least: 2.5.0
-Tested up to: 4.3
-Stable tag: 2.3.0
+Tested up to: 4.3.1
+Stable tag: 2.4.0
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -154,6 +154,11 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Changelog ==
 
+= 2.4.0 (October 05, 2015) =
+*Importent update! Technical changes for better addon compatibility.
+*Compatible with new version of Gallery Card addon 
+*Compatible with our new released Player Card addons 
+
 = 2.3.0 (August 21, 2015) =
 * Compatible with recent changes by Twitter. Photo Card, Gallery Card & Product Card are now deprecate by Twitter itself.
 * Compatible with latest WordPress 4.3.
@@ -205,7 +210,7 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 = 2.0.4 (March 25, 2015) =
 * Video tutorial added,
 * Bug Fixed
-* Create Addon Comparibility with Product Card for WooCommerce.
+* Create Addon Compatibility with Product Card for WooCommerce.
 
 
 = 2.0.3 (March 17, 2015) =
@@ -279,6 +284,9 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 
 == Upgrade Notice ==
+
+= 2.4.0 =
+**Importent update!** Technical changes for better addon compatibility. Compatible with new version of Gallery Card addon and our new released Player Card addons
 
 = 2.3.0 =
 **Must Update** Compatible with latest changes with Twitter. Photo Card, Gallery Card & Product Card are now deprecate by Twitter itself. Compatible with latest WordPress 4.3.
