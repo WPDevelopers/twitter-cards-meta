@@ -154,11 +154,10 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Changelog ==
 
-= 2.4.0 (October 05, 2015) =
-*Important update! Technical changes for better addon compatibility.
-*Compatible with new version of Gallery Card addon 
-*Compatible with our new released Player Card addons
-*Importent Bug Fix 
+= 2.4.0 (November 03, 2015) =
+* Important update! Technical changes for better addon compatibility. 
+* Compatible with our upcoming Player Card addons
+* Importent Bug Fix 
 
 = 2.3.0 (August 21, 2015) =
 * Compatible with recent changes by Twitter. Photo Card, Gallery Card & Product Card are now deprecate by Twitter itself.
@@ -287,10 +286,7 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 == Upgrade Notice ==
 
 = 2.4.0 =
-**Important update!** Bug Fix. Technical changes for better addon compatibility. Compatible with new version of Gallery Card addon and our new released Player Card addons.
-
-= 2.3.0 =
-**Must Update** Compatible with latest changes with Twitter. Photo Card, Gallery Card & Product Card are now deprecate by Twitter itself. Compatible with latest WordPress 4.3.
+**Important update! ** Bug Fix. Technical changes for better addon compatibility. Compatible with our upcoming Player Card addons.
 
 
 

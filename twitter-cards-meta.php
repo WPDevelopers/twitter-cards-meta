@@ -345,7 +345,7 @@ if ( current_user_can( 'install_plugins' ) )
         /* Check that the user hasn't already clicked to ignore the message */
 	if ( ! get_user_meta($user_id, 'twcm_ignore_notice230') ) {
         echo '<div class="updated"><p>';
-        printf(__('Major changes to Twitter Cards by Twitter itself. Photo Card, Gallery Card &amp; Product Card are now deprecate. Photo Card + Summary Card = <a href="https://wpdeveloper.net/go/TCM-SCLI" target="_blank">Summary Card with Large Image</a> is the best option now. Dont forget to review <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a> </strong><strong> plugin <a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">here</a>? Thanks in advance!</strong>
+        printf(__('Photo Card + Summary Card = <a href="https://wpdeveloper.net/go/TCM-SCLI" target="_blank">Summary Card with Large Image</a> is the best option now. Dont forget to review <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a> </strong><strong> plugin <a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">here</a>? Thanks in advance!</strong>
         	 <a href="%1$s">[Hide]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
         echo "</p></div>";
 	}
