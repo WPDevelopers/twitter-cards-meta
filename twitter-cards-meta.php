@@ -3,13 +3,13 @@
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: https://wpdeveloper.net/go/TCM
  * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Summary Card with Large Image. Advance Automated settings.
- * Version: 2.4.0
+ * Version: 2.4.1
  * Author: WPDeveloper.net
  * Author URI: https://wpdeveloper.net/
  * License: GPLv2+
  * Text Domain: twitter-cards-meta
  * Min WP Version: 2.5.0
- * Max WP Version: 4.3.1
+ * Max WP Version: 4.4.1
  */
 
 
@@ -335,17 +335,17 @@ add_action('save_post', 'twcm_save_post_page_metabox');
 
 /* Display a notice that can be dismissed */
 
-add_action('admin_notices', 'twcm_admin_notice1');
+add_action('admin_notices', 'twcm_admin_notice');
 
-function twcm_admin_notice1() {
+function twcm_admin_notice() {
 if ( current_user_can( 'install_plugins' ) )
    {
 	global $current_user ;
         $user_id = $current_user->ID;
         /* Check that the user hasn't already clicked to ignore the message */
-	if ( ! get_user_meta($user_id, 'twcm_ignore_notice230') ) {
+	if ( ! get_user_meta($user_id, 'twcm_ignore_notice241') ) {
         echo '<div class="updated"><p>';
-        printf(__('Photo Card + Summary Card = <a href="https://wpdeveloper.net/go/TCM-SCLI" target="_blank">Summary Card with Large Image</a> is the best option now. Dont forget to review <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a> </strong><strong> plugin <a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">here</a>? Thanks in advance!</strong>
+        printf(__('Using <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a></strong> for awhile? Share your Love, <a href="https://wpdeveloper.net/TCM-Tweet-Main" target="_blank">Tweet to us</a> or <a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">review us</a> and get featured on our site!
         	 <a href="%1$s">[Hide]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
         echo "</p></div>";
 	}
@@ -359,7 +359,7 @@ function twcm_nag_ignore() {
         $user_id = $current_user->ID;
         /* If user clicks to ignore the notice, add that to their user meta */
         if ( isset($_GET['twcm_nag_ignore']) && '0' == $_GET['twcm_nag_ignore'] ) {
-             add_user_meta($user_id, 'twcm_ignore_notice230', 'true', true);
+             add_user_meta($user_id, 'twcm_ignore_notice241', 'true', true);
 	}
 }
 
