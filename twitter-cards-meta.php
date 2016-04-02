@@ -3,13 +3,13 @@
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: https://wpdeveloper.net/go/TCM
  * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Summary Card with Large Image. Advance Automated settings.
- * Version: 2.4.1
+ * Version: 2.4.2
  * Author: WPDeveloper.net
  * Author URI: https://wpdeveloper.net/
  * License: GPLv2+
  * Text Domain: twitter-cards-meta
  * Min WP Version: 2.5.0
- * Max WP Version: 4.4.1
+ * Max WP Version: 4.5
  */
 
 
@@ -133,14 +133,19 @@ function twcm_get_description()
 	//$desc=apply_filters('the_content',$post->post_content);#using this method to keep shortcode gentrated texts.
 	//$desc=get_the_content(); 
 	}
+	// a failback by Asif for excerpt if null returned by other method.
+	if ( $desc == null ) {
+		$desc = get_the_content();
+		$desc = str_replace(']]>',']]&gt;', $desc);
+        $desc=strip_shortcodes( $desc );
+     }
+
 	$desc=strip_tags( $desc );
-	
 	//$desc=wp_filter_nohtml_kses( $desc ); #smililar with strip_tags() function
 	$desc=esc_attr($desc);
 	$desc = trim(preg_replace("/\s+/", " ", $desc)); #to maintain a space between words in description. Since version 1.1.2
 	$desc=twcm_sub_string($desc, 200);
 	return $desc;
-
 }
 
 
@@ -345,7 +350,7 @@ if ( current_user_can( 'install_plugins' ) )
         /* Check that the user hasn't already clicked to ignore the message */
 	if ( ! get_user_meta($user_id, 'twcm_ignore_notice241') ) {
         echo '<div class="updated"><p>';
-        printf(__('Using <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a></strong> for awhile? Share your Love, <a href="https://wpdeveloper.net/TCM-Tweet-Main" target="_blank">Tweet to us</a> or <a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">review us</a> and get featured on our site!
+        printf(__('If you enjoyed <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a></strong>, share your Love by <a href="https://wpdeveloper.net/TCM-Tweet-Main" target="_blank">Tweeting to us</a> or <a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">reviewing us</a> on WordPress.org!
         	 <a href="%1$s">[Hide]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
         echo "</p></div>";
 	}
