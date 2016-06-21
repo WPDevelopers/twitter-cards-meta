@@ -1,10 +1,10 @@
 === Twitter Cards Meta ===
 Contributors: Asif2BD, onetarek
 Donate link: https://wpdeveloper.net/go/TCM
-Tags: Twitter Card, Summary Card, Summary Card with Large Image, Product Card, Gallery Card, Photo Gallery Card, Twitter Gallery, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Yoast Twitter Card, Twitter Analytics, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
+Tags: Twitter Card, Summary Card, Summary Card with Large Image, Product Card, Gallery Card, Photo Gallery Card, Twitter Gallery, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Twitter Analytics, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
 Requires at least: 2.5.0
-Tested up to: 4.5
-Stable tag: 2.4.2
+Tested up to: 4.5.3
+Stable tag: 2.4.3
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -154,6 +154,10 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Changelog ==
 
+= 2.4.3 (June 22, 2016) =
+* Minor release
+* Compatible to WordPress 4.5.3
+
 = 2.4.2 (April 02, 2016) =
 * New Method to extract post description when excerpt does not exist and other process failed.
 * Compatible to WordPress 4.5
@@ -291,8 +295,8 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Upgrade Notice ==
 
-= 2.4.2 =
-** New Method to extract post description when excerpt does not exist and other process failed. Compatible to WordPress 4.5. [Must Update]
+= 2.4.3 =
+** Minor release. Compatible to WordPress 4.5.3
 
 
 
