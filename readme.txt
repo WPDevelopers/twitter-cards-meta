@@ -3,12 +3,12 @@ Contributors: Asif2BD, onetarek
 Donate link: https://wpdeveloper.net/go/TCM
 Tags: Twitter Card, Summary Card, Summary Card with Large Image, Product Card, Gallery Card, Photo Gallery Card, Twitter Gallery, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Twitter Analytics, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
 Requires at least: 2.5.0
-Tested up to: 4.5.3
-Stable tag: 2.4.3
+Tested up to: 4.6
+Stable tag: 2.4.4
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Undoubtedly The Best Twitter Card Plugin in WordPress. Supports Summary Card with Large Image. App Card & Player Card Support Coming Soon.
+Undoubtedly The Best Twitter Card Plugin in WordPress. Supports Summary Card with Large Image. Easy & Automated Solution.
 
 
 
@@ -18,7 +18,7 @@ Undoubtedly The Best Twitter Card Plugin in WordPress. Supports Summary Card wit
 
 [Twitter Cards](https://wpdeveloper.net/free-plugin/twitter-cards-meta/) increase your Twitter visibility & Brand value. And with this plugin you don't have to worry about the markup, per post image selection, description, any thing. This plugin provide automatic setup, for existing and future post. **Automatic approval in Twitter Card Application!**
 
-**Do you know now Twitter provide detail [Analytics](https://analytics.twitter.com/)? To get the analytics you need 'Twitter Cards Meta'.**
+**Do you know now Twitter provide detailed [Analytics](https://analytics.twitter.com/)? To get the analytics you need 'Twitter Cards Meta'.**
 
 **Twitter Photo Card + Summary Card = [Summary Card with Large Image](https://wpdeveloper.net/go/TCM-SCLI) will increase your Twitter interaction!!!**
 
@@ -145,14 +145,19 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Screenshots ==
 
-1. Summary Card with Large Image - Live Example.
-2. Summary Card - Live Example.
-3. Option Page
-4. Twitter Preview Tool - Live Example.
+1. Difference between Summary Card & Summary Card with Large Image!
+2. Summary Card with Large Image - Live Example.
+3. Summary Card - Live Example.
+4. Option Page
+5. Twitter Preview Tool - Live Example.
 
 
 
 == Changelog ==
+
+= 2.4.4 (August 15, 2016) =
+* Minor release
+* Compatible to WordPress 4.6
 
 = 2.4.3 (June 22, 2016) =
 * Minor release
@@ -295,8 +300,8 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Upgrade Notice ==
 
-= 2.4.3 =
-** Minor release. Compatible to WordPress 4.5.3
+= 2.4.4 =
+** Minor release. Compatible to WordPress 4.6
 
 
 
