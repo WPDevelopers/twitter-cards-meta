@@ -3,13 +3,13 @@
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: https://wpdeveloper.net/go/TCM
  * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Summary Card with Large Image. Advance Automated settings.
- * Version: 2.4.4
+ * Version: 2.4.5
  * Author: WPDeveloper.net
  * Author URI: https://wpdeveloper.net/
  * License: GPLv2+
  * Text Domain: twitter-cards-meta
  * Min WP Version: 2.5.0
- * Max WP Version: 4.6
+ * Max WP Version: 4.6.1
  */
 
 
@@ -115,30 +115,31 @@ function twcm_render_meta_data($cards_meta_data){
 	foreach($cards_meta_data as $name=>$content){
 	echo '<meta name="'.esc_attr($name).'" content="'.esc_attr($content).'" />'; echo "\r\n";
 	}
-	echo "<!-- Twitter Cards Meta By WPDeveloper.net -->\r\n\r\n";
+	echo "<!-- Twitter Cards Meta By WPDeveloper.net  Try 3-->\r\n\r\n";
 
 }
+
 
 function twcm_get_description()
 {
 
-	global $post;
+        global $post;
 	$twcm_options=twcm_get_options();
-	
+// Try Yoast metadesc first
+	$desc = get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true); 
+// Try the excerpt
+     
+   if($desc=="")
+{
 	$desc=trim(get_the_excerpt());
-	if($desc=="")
+}
+// If all fails grab content from content
+     else
 	{
-	//$desc=$post->post_content;
-	$desc=strip_shortcodes( $post->post_content ); #avoid shortcode content
-	//$desc=apply_filters('the_content',$post->post_content);#using this method to keep shortcode gentrated texts.
-	//$desc=get_the_content(); 
+        $desc = get_the_content();
+	$desc = str_replace(']]>',']]&gt;', $desc);
+        $desc = strip_shortcodes( $desc );
 	}
-	// a failback by Asif for excerpt if null returned by other method.
-	if ( $desc == null ) {
-		$desc = get_the_content();
-		$desc = str_replace(']]>',']]&gt;', $desc);
-        $desc=strip_shortcodes( $desc );
-     }
 
 	$desc=strip_tags( $desc );
 	//$desc=wp_filter_nohtml_kses( $desc ); #smililar with strip_tags() function
@@ -348,7 +349,7 @@ if ( current_user_can( 'install_plugins' ) )
 	global $current_user ;
         $user_id = $current_user->ID;
         /* Check that the user hasn't already clicked to ignore the message */
-	if ( ! get_user_meta($user_id, 'twcm_ignore_notice241') ) {
+	if ( ! get_user_meta($user_id, 'twcm_ignore_notice245') ) {
         echo '<div class="updated"><p>';
         printf(__('If you enjoyed <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a></strong>, share your Love by <a href="https://wpdeveloper.net/TCM-Tweet-Main" target="_blank">Tweeting to us</a> or <a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">reviewing us</a> on WordPress.org!
         	 <a href="%1$s">[Hide]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
@@ -364,7 +365,7 @@ function twcm_nag_ignore() {
         $user_id = $current_user->ID;
         /* If user clicks to ignore the notice, add that to their user meta */
         if ( isset($_GET['twcm_nag_ignore']) && '0' == $_GET['twcm_nag_ignore'] ) {
-             add_user_meta($user_id, 'twcm_ignore_notice241', 'true', true);
+             add_user_meta($user_id, 'twcm_ignore_notice245', 'true', true);
 	}
 }
 
