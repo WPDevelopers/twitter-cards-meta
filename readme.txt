@@ -1,10 +1,10 @@
 === Twitter Cards Meta ===
 Contributors: Asif2BD, onetarek
 Donate link: https://wpdeveloper.net/go/TCM
-Tags: Twitter Card, Summary Card, Summary Card with Large Image, Product Card, Gallery Card, Photo Gallery Card, Twitter Gallery, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Twitter Analytics, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
+Tags: Twitter Card, Twitter Meta, witter Analytics, Summary Card, Summary Card with Large Image, Product Card, Gallery Card, Photo Gallery Card, Twitter Gallery, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
 Requires at least: 2.5.0
-Tested up to: 4.6.1
-Stable tag: 2.4.5
+Tested up to: 4.7
+Stable tag: 2.5.0
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,26 @@ Undoubtedly The Best Twitter Card Plugin in WordPress. Supports Summary Card wit
 
 == Description ==
 
-[WPDeveloper.net](https://wpdeveloper.net/) brings **[Twitter Cards Meta](https://wpdeveloper.net/go/TCM)** for all WordPress user for free. Adding Twitter Cards meta was never this easy. 100% validate meta according to Twitter and get sure approval within minutes. Most complete Twitter Cards plugin in WordPress.
+ **[Twitter Cards Meta](https://wpdeveloper.net/go/TCM)** by [WPDeveloper.net](https://wpdeveloper.net/) is best Twitter Cards plugin for WordPress. Adding Twitter Cards Meta was never this easy. 100% validate meta according to Twitter and get sure approval within minutes. Most complete Twitter Cards plugin in WordPress.
+
+ **Feature Includes:**
+
+*   Auto Add Twitter Cards Meta Tags in every single posts/pages.
+*   For multi-author blog this plugin could add a extra field in 'Author Bio/Profile' page to add his own Twitter Account.
+*   Ability to get Attachment image automatically.
+*   This plugin will get the first used image, even if WordPress attachment image did not work properly.
+*   Ability to assign image from custom field, you could just type which custom field have the best image for this purpose.
+*   Possible to add Twitter Cards meta tags even in Home Page.
+*   You could include a custom Description for Home Page.
+*   Though its not a good practice but you could include a default Image, its specially helpful for home page.
+*   **Addon supported** 
+*   **Summary Card with Large Image added as Addon** 
+*   Photo Card Support Added.
+*   Ability to select **'Card Type'** per post basis or site-wide.
+*   Meta Box in post panel to select individual post's 'Card Type'.
+*   Option to force all posts (old and future posts) to a certain 'Cards Type'. It will override individual post's selection. 
+*   Now Attached and Featured image both work properly and user have the option to select which type of image he wants.
+*   Validate 100% with W3C Markup Validation Service!
 
 [Twitter Cards](https://wpdeveloper.net/free-plugin/twitter-cards-meta/) increase your Twitter visibility & Brand value. And with this plugin you don't have to worry about the markup, per post image selection, description, any thing. This plugin provide automatic setup, for existing and future post. **Automatic approval in Twitter Card Application!**
 
@@ -40,25 +59,6 @@ Let us help, we have team of Avenger! We could help you setup Twitter Cards Meta
 
 
 Though there are other possible ways to add Twitter Cards metadata but this plugin is the best and easiest way for Twitter Cards. We have reasons to believe so, we will explain that at the bottom of this page. Check our features first.
-
-**Feature Includes:**
-
-*   Auto Add Twitter Cards Meta Tags in every single posts/pages.
-*   For multi-author blog this plugin could add a extra field in 'Author Bio/Profile' page to add his own Twitter Account.
-*   Ability to get Attachment image automatically.
-*   This plugin will get the first used image, even if WordPress attachment image did not work properly.
-*   Ability to assign image from custom field, you could just type which custom field have the best image for this purpose.
-*   Possible to add Twitter Cards meta tags even in Home Page.
-*   You could include a custom Description for Home Page.
-*   Though its not a good practice but you could include a default Image, its specially helpful for home page.
-*   **Addon supported** 
-*   **Summary Card with Large Image added as Addon** 
-*   Photo Card Support Added.
-*   Ability to select **'Card Type'** per post basis or site-wide.
-*   Meta Box in post panel to select individual post's 'Card Type'.
-*   Option to force all posts (old and future posts) to a certain 'Cards Type'. It will override individual post's selection. 
-*   Now Attached and Featured image both work properly and user have the option to select which type of image he wants.
-*   Validate 100% with W3C Markup Validation Service!
 
 > <strong>Contribute in GitHub!!</strong><br>
 > We are OpenSource & GPL and available in GitHub. You could also contribute. [Click here](https://github.com/ARCommunications/Twitter-Cards-Meta)!
@@ -154,6 +154,11 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 
 == Changelog ==
+
+= 2.5.0 (April 06, 2017) =
+* Cross-site request forgery (CSRF)/cross-site scripting (XSS) vulnerability fixed
+* Sanitization done
+* Compatible to WordPress 4.7.X
 
 = 2.4.5 (November 21, 2016) =
 * Better Description handling with yoast meta description function
@@ -304,8 +309,8 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Upgrade Notice ==
 
-= 2.4.5 =
-** Must update. Better Description handling.
+= 2.5.0 =
+** [Must Update] Fixed a XSS Vulnerability.
 
 
 
