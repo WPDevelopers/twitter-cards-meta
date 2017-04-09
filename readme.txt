@@ -1,26 +1,27 @@
 === Twitter Cards Meta ===
 Contributors: Asif2BD, onetarek
 Donate link: https://wpdeveloper.net/go/TCM
-Tags: Twitter Card, Twitter Meta, witter Analytics, Summary Card, Summary Card with Large Image, Product Card, Gallery Card, Photo Gallery Card, Twitter Gallery, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
+Tags: Twitter Card, Twitter Meta, Twitter Analytics, Twitter Cards, Meta Tag, Summary Card, Summary Card with Large Image, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
 Requires at least: 2.5.0
 Tested up to: 4.7
-Stable tag: 2.5.0
+Stable tag: 2.5.1
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Undoubtedly The Best Twitter Card Plugin in WordPress. Supports Summary Card with Large Image. Easy & Automated Solution.
+The Best Twitter Card Plugin in WordPress. Supports Summary Card with Large Image. Easy & Automated Solution.
 
 
 
 == Description ==
 
- **[Twitter Cards Meta](https://wpdeveloper.net/go/TCM)** by [WPDeveloper.net](https://wpdeveloper.net/) is best Twitter Cards plugin for WordPress. Adding Twitter Cards Meta was never this easy. 100% validate meta according to Twitter and get sure approval within minutes. Most complete Twitter Cards plugin in WordPress.
+ **[Twitter Cards Meta](https://wpdeveloper.net/go/TCM)** by [WPDeveloper.net](https://wpdeveloper.net/) is the best Twitter Card plugin for WordPress. Adding Twitter Cards Meta was never this easy. 100% validate meta according to Twitter and get sure approval within minutes.
 
  **Feature Includes:**
 
 *   Auto Add Twitter Cards Meta Tags in every single posts/pages.
 *   For multi-author blog this plugin could add a extra field in 'Author Bio/Profile' page to add his own Twitter Account.
 *   Ability to get Attachment image automatically.
+*   **New** Compatible with Yoast SEO & All-in-One SEO plugin.
 *   This plugin will get the first used image, even if WordPress attachment image did not work properly.
 *   Ability to assign image from custom field, you could just type which custom field have the best image for this purpose.
 *   Possible to add Twitter Cards meta tags even in Home Page.
@@ -128,6 +129,10 @@ No, just activate the plugin and follow the steps.
 
 Images larger than 120x120px will be resized and cropped square based on longest dimension. Images smaller than 60x60px will not be shown. (From [Twitter Cards](https://dev.twitter.com/docs/cards) guideline page).
 
+= What if I am using Yoast SEO or All-in-One SEO or any other SEO plugin? =
+
+We are compatible with any other SEO plugin. To avoid duplication, if you want 'Twitter Cards Meta' to work, just turn off Twitter Card feature in your SEO plugin, and let this plugin handle the Twitter Cards Meta. Otherwise you will get duplicate issue. While SEO plugins are great at what they designed to but check our main description to understand why we are far better solution for **Twitter Card** than any of those SEO plugin.
+
 = Do you have more detail guideline? =
 
 Yes, check [this page](https://wpdeveloper.net/go/TCM-Ins) for detail guide.
@@ -154,6 +159,10 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 
 == Changelog ==
+
+= 2.5.1 (April 09, 2017) =
+* Minor Bug Fix
+* Validation Error fixed
 
 = 2.5.0 (April 06, 2017) =
 * Cross-site request forgery (CSRF)/cross-site scripting (XSS) vulnerability fixed
@@ -309,8 +318,8 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Upgrade Notice ==
 
-= 2.5.0 =
-** [Must Update] Fixed a XSS Vulnerability.
+= 2.5.1 =
+** [Must Update] Fixed - XSS Vulnerability. Validation error fixed.
 
 
 

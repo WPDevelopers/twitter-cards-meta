@@ -3,13 +3,13 @@
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: https://wpdeveloper.net/go/TCM
  * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Summary Card with Large Image. Advance Automated settings.
- * Version: 2.5.0
- * Author: WPDeveloper.net
- * Author URI: https://wpdeveloper.net/
+ * Version: 2.5.1
+ * Author: WP Developer
+ * Author URI: https://wpdeveloper.net
  * License: GPLv2+
  * Text Domain: twitter-cards-meta
  * Min WP Version: 2.5.0
- * Max WP Version: 4.7.3
+ * Max WP Version: 4.7
  */
 
 
@@ -111,11 +111,11 @@ $twcm_options=twcm_get_options();
 add_action('wp_head','twitter_cards_meta');
 
 function twcm_render_meta_data($cards_meta_data){
-	echo "\r\n<!-- Twitter Cards Meta By WPDeveloper.net -->\r\n";
+	echo "\r\n<!-- Twitter Cards Meta - V 2.5.1 -->\r\n";
 	foreach($cards_meta_data as $name=>$content){
 	echo '<meta name="'.esc_attr($name).'" content="'.esc_attr($content).'" />'; echo "\r\n";
 	}
-	echo "<!-- Twitter Cards Meta By WPDeveloper.net  Try 3-->\r\n\r\n";
+	echo "<!-- Twitter Cards Meta By WPDeveloper.net -->\r\n\r\n";
 
 }
 
