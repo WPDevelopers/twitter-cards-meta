@@ -3,8 +3,8 @@ Contributors: Asif2BD, onetarek
 Donate link: https://wpdeveloper.net/go/TCM
 Tags: Twitter Card, Twitter Meta, Twitter Analytics, Twitter Cards, Meta Tag, Summary Card, Summary Card with Large Image, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
 Requires at least: 2.5.0
-Tested up to: 4.7
-Stable tag: 2.5.1
+Tested up to: 4.8
+Stable tag: 2.5.2
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -159,6 +159,10 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 
 == Changelog ==
+
+= 2.5.2 (June 8, 2017) =
+* Minor Bug Fix
+* Compatible with WordPress 4.8
 
 = 2.5.1 (April 09, 2017) =
 * Minor Bug Fix
@@ -318,8 +322,8 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Upgrade Notice ==
 
-= 2.5.1 =
-** [Must Update] Fixed - XSS Vulnerability. Validation error fixed.
+= 2.5.2 =
+** [Minor Update] Compatible with WordPress 4.8
 
 
 

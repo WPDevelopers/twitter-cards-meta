@@ -3,13 +3,13 @@
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: https://wpdeveloper.net/go/TCM
  * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Summary Card with Large Image. Advance Automated settings.
- * Version: 2.5.1
+ * Version: 2.5.2
  * Author: WP Developer
  * Author URI: https://wpdeveloper.net
  * License: GPLv2+
  * Text Domain: twitter-cards-meta
  * Min WP Version: 2.5.0
- * Max WP Version: 4.7
+ * Max WP Version: 4.8
  */
 
 
@@ -349,7 +349,7 @@ if ( current_user_can( 'install_plugins' ) )
 	global $current_user ;
         $user_id = $current_user->ID;
         /* Check that the user hasn't already clicked to ignore the message */
-	if ( ! get_user_meta($user_id, 'twcm_ignore_notice245') ) {
+	if ( ! get_user_meta($user_id, 'twcm_ignore_notice252') ) {
         echo '<div class="updated"><p>';
         printf(__('If you enjoyed <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a></strong>, share your Love by <a href="https://wpdeveloper.net/TCM-Tweet-Main" target="_blank">Tweeting to us</a> or <a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">reviewing us</a> on WordPress.org!
         	 <a href="%1$s">[Hide]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
@@ -365,7 +365,7 @@ function twcm_nag_ignore() {
         $user_id = $current_user->ID;
         /* If user clicks to ignore the notice, add that to their user meta */
         if ( isset($_GET['twcm_nag_ignore']) && '0' == $_GET['twcm_nag_ignore'] ) {
-             add_user_meta($user_id, 'twcm_ignore_notice245', 'true', true);
+             add_user_meta($user_id, 'twcm_ignore_notice252', 'true', true);
 	}
 }
 
