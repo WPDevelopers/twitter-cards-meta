@@ -123,29 +123,27 @@ function twcm_render_meta_data($cards_meta_data){
 function twcm_get_description()
 {
 
-        global $post;
-	$twcm_options=twcm_get_options();
-// Try Yoast metadesc first
-	$desc = get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true); 
-// Try the excerpt
-     
-   if($desc=="")
-{
-	$desc=trim(get_the_excerpt());
-}
-// If all fails grab content from content
-     else
-	{
-        $desc = get_the_content();
-	$desc = str_replace(']]>',']]&gt;', $desc);
-        $desc = strip_shortcodes( $desc );
+   global $post;
+	$twcm_options = twcm_get_options();
+	$desc = '';
+	if( empty( $desc ) ) {
+		// Try Yoast metadesc first
+		$desc = get_post_meta( get_the_ID(), '_yoast_wpseo_metadesc', true ); 
+		if( empty( $desc ) ) {
+			$desc = trim( get_the_excerpt() );
+		}
+	}else {
+		// If all fails grab content from content
+      $desc = get_the_content();
+		$desc = str_replace(']]>',']]&gt;', $desc);
+      $desc = strip_shortcodes( $desc );
 	}
 
-	$desc=strip_tags( $desc );
+	$desc = strip_tags( $desc );
 	//$desc=wp_filter_nohtml_kses( $desc ); #smililar with strip_tags() function
-	$desc=esc_attr($desc);
+	$desc = esc_attr( $desc );
 	$desc = trim(preg_replace("/\s+/", " ", $desc)); #to maintain a space between words in description. Since version 1.1.2
-	$desc=twcm_sub_string($desc, 200);
+	$desc = twcm_sub_string( $desc, 200 );
 	return $desc;
 }
 
