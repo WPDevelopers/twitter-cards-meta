@@ -4,7 +4,7 @@ Donate link: https://wpdeveloper.net/go/TCM
 Tags: Twitter Card, Twitter Meta, Twitter Analytics, Twitter Cards, Meta Tag, Summary Card, Summary Card with Large Image, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
 Requires at least: 2.5.0
 Tested up to: 4.8
-Stable tag: 2.5.2
+Stable tag: 2.5.3
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
