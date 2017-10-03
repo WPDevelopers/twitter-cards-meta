@@ -3,7 +3,7 @@
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: https://wpdeveloper.net/go/TCM
  * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Summary Card with Large Image. Advance Automated settings.
- * Version: 2.5.2
+ * Version: 2.5.3
  * Author: WP Developer
  * Author URI: https://wpdeveloper.net
  * License: GPLv2+
@@ -111,7 +111,7 @@ $twcm_options=twcm_get_options();
 add_action('wp_head','twitter_cards_meta');
 
 function twcm_render_meta_data($cards_meta_data){
-	echo "\r\n<!-- Twitter Cards Meta - V 2.5.1 -->\r\n";
+	echo "\r\n<!-- Twitter Cards Meta - V 2.5.3 -->\r\n";
 	foreach($cards_meta_data as $name=>$content){
 	echo '<meta name="'.esc_attr($name).'" content="'.esc_attr($content).'" />'; echo "\r\n";
 	}
@@ -144,13 +144,15 @@ function twcm_get_description()
 	$desc = strip_tags( $desc );
 	//$desc=wp_filter_nohtml_kses( $desc ); #smililar with strip_tags() function
 	$desc = esc_attr( $desc );
+	$desc = str_replace(']]>',']]&gt;', $desc);
+	$desc = strip_shortcodes( $desc );
 	$desc = trim(preg_replace("/\s+/", " ", $desc)); #to maintain a space between words in description. Since version 1.1.2
-	$desc = twcm_sub_string( $desc, 200 );
+	$desc = twcm_sub_string( $desc, 160 );
 	return $desc;
 }
 
 
-function twcm_sub_string($text, $charlength=200) {
+function twcm_sub_string($text, $charlength=160) {
 	$charlength++;
 	$retext="";
 	if ( mb_strlen( $text ) > $charlength ) {
@@ -349,9 +351,9 @@ if ( current_user_can( 'install_plugins' ) )
 	global $current_user ;
         $user_id = $current_user->ID;
         /* Check that the user hasn't already clicked to ignore the message */
-	if ( ! get_user_meta($user_id, 'twcm_ignore_notice252') ) {
+	if ( ! get_user_meta($user_id, 'twcm_ignore_notice253') ) {
         echo '<div class="updated"><p>';
-        printf(__('If you enjoyed <strong><a href="https://wpdeveloper.net/go/TCM" target="_blank">Twitter Cards Meta</a></strong>, share your Love by <a href="https://wpdeveloper.net/TCM-Tweet-Main" target="_blank">Tweeting to us</a> or <a href="https://wpdeveloper.net/go/twmc-rating" target="_blank">reviewing us</a> on WordPress.org!
+        printf(__('Greeting from <a href="https://wpdeveloper.net/"><strong>WPDeveloper</strong></a> Team, we fixed <strong><em><a href="https://wpdeveloper.net/go/TCM" target="_blank" rel="noopener">Twitter Cards Meta</a></em> Description issue</strong>. Let us know if you still see an issue, we are<a href="https://wpdeveloper.net/support/"> here to help</a>!
         	 <a href="%1$s">[Hide]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
         echo "</p></div>";
 	}
@@ -365,7 +367,7 @@ function twcm_nag_ignore() {
         $user_id = $current_user->ID;
         /* If user clicks to ignore the notice, add that to their user meta */
         if ( isset($_GET['twcm_nag_ignore']) && '0' == $_GET['twcm_nag_ignore'] ) {
-             add_user_meta($user_id, 'twcm_ignore_notice252', 'true', true);
+             add_user_meta($user_id, 'twcm_ignore_notice253', 'true', true);
 	}
 }
 
