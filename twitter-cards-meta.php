@@ -123,8 +123,9 @@ function twcm_render_meta_data($cards_meta_data){
 function twcm_get_description()
 {
 
-   global $post;
+   	global $post;
 	$twcm_options = twcm_get_options();
+	$post_content = $post->post_content;
 	$desc = '';
 	if( empty( $desc ) ) {
 		// Try Yoast metadesc first
@@ -132,11 +133,12 @@ function twcm_get_description()
 		if( empty( $desc ) ) {
 			$desc = trim( get_the_excerpt() );
 		}
-	}else {
-		// If all fails grab content from content
-      $desc = get_the_content();
-		$desc = str_replace(']]>',']]&gt;', $desc);
-      $desc = strip_shortcodes( $desc );
+	}
+
+	// If still empty, grab the content
+
+	if( empty( $desc ) ) {
+		 $desc = $post_content;
 	}
 
 	$desc = strip_tags( $desc );
