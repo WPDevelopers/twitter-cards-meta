@@ -8,6 +8,8 @@ if(!function_exists('wpdev_dashboard_widget_function')) #prevent the collision o
 	
 	function wpdev_dashboard_widget_function() {
 		// Display whatever it is you want to show
+
+			$tcm_maxitems = 0;
 		
 			// Get a SimplePie feed object from the specified feed source.
 			$rss = fetch_feed('https://wpdeveloper.net/feed');

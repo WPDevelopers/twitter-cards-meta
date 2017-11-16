@@ -1,10 +1,10 @@
 === Twitter Cards Meta - Best Twitter Card Plugin for WordPress ===
-Contributors: Asif2BD, onetarek
+Contributors: Asif2BD, wpdevteam, onetarek, re_enter_rupok
 Donate link: https://wpdeveloper.net/go/TCM
-Tags: Twitter Card, Twitter Meta, Twitter Analytics, Twitter Cards, Meta Tag, Summary Card, Summary Card with Large Image, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Social, Ecommerce Card, Social Meta, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
+Tags: Twitter Card, Twitter Meta, Twitter Analytics, Twitter Cards, Meta Tag, Summary Card, Summary Card with Large Image, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Ecommerce Card, Social Meta, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
 Requires at least: 2.5.0
-Tested up to: 4.8
-Stable tag: 2.5.3
+Tested up to: 4.9
+Stable tag: 2.5.4
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -161,6 +161,10 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 
 == Changelog ==
+
+= 2.5.4 (November 16, 2017) =
+* Compatible with WordPress 4.9
+* Temporary fix for undefined error.
 
 = 2.5.3 (October 3, 2017) =
 * [Major Fix] Twitter Description are now far far better handled.
@@ -329,8 +333,8 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Upgrade Notice ==
 
-= 2.5.3 =
-** [Mijor Update] Twitter Description are now far far better handled, fall-back to Yoast SEO now works perfectly.
+= 2.5.4 =
+** [Minor Update] Undefined error temp fix, and compatible with WordPress 4.9.
 
 
 
