@@ -16,6 +16,7 @@
 	padding: 10px 0px 10px 10px;
 	border-radius: 7px 0px 0px 7px;
 	overflow: hidden;
+	background-color: #444 !important;
 }
 .twcm-summary-card .twcm-summary-card-right {
 	width: calc( 100% - 125px );
