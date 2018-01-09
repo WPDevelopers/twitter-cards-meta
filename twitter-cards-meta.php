@@ -26,14 +26,19 @@ define( 'ACTIVE_PLAYER_CARD', apply_filters( 'active_player_card', false ) );
 
 include_once(TWCM_PLUGIN_PATH.'twcm-options.php');
 include_once(TWCM_PLUGIN_PATH.'wpdev-dashboard-widget.php');
+include_once(TWCM_PLUGIN_PATH.'twcm-class-twitter-cards-preview.php');
 
 function add_twcm_menu_pages()
 {
 	  add_menu_page( "Twitter Cards Meta", "Twitter Cards" ,'manage_options', TWCM_PLUGIN_SLUG, 'twcm_options_page');
 }
 
-add_action('admin_menu', 'add_twcm_menu_pages'); 
+add_action('admin_menu', 'add_twcm_menu_pages');
 
+function twcm_add_styles_scripts() {
+	wp_enqueue_style( 'twcm-admin-style', TWCM_PLUGIN_URL.'/assets/css/twcm-admin.css' );
+}
+add_action( 'admin_init', 'twcm_add_styles_scripts' );
 
 function twitter_cards_meta()
 {
@@ -46,14 +51,14 @@ $twcm_options=twcm_get_options();
 		  {
 		  	//get $creator_twitter_username
 			 $creator_twitter_username=get_the_author_meta('twcm_twitter', $post->post_author);
-			 if($creator_twitter_username==""){$creator_twitter_username=$twcm_options['site_twitter_username'];}		
-		  
+			 if($creator_twitter_username==""){$creator_twitter_username=$twcm_options['site_twitter_username'];}
+
 		  }
 		  else
 		  {
 			$creator_twitter_username=$twcm_options['site_twitter_username'];
 		  }
-		  
+
 		  if($twcm_options['use_default_card_type_sitewide']){
 		    $twitter_card_type=$twcm_options['default_card_type'];
 		  }
@@ -61,34 +66,34 @@ $twcm_options=twcm_get_options();
 		    $twitter_card_type=get_post_meta($post->ID,'_twcm_twitter_card_type',true);
 		    if($twitter_card_type==""){$twitter_card_type=$twcm_options['default_card_type'];}
 		  }
-		  
-		  
-		  
+
+
+
 		  $twitter_url    = get_permalink();
 		  $twitter_title  = get_the_title();
 		  $twitter_thumbs = twcm_get_image();
-		  
+
 		  $cards_meta_data=array(
 		  		"twitter:card" 		=> $twitter_card_type,
 				"twitter:site" 		=> "@".$site_twitter_username,
 				"twitter:creator"	=> "@".$creator_twitter_username,
 				"twitter:url"		=> $twitter_url,
 				"twitter:title"		=> $twitter_title,
-				"twitter:description" => twcm_get_description(), 
+				"twitter:description" => twcm_get_description(),
 				"twitter:image"		=> $twitter_thumbs
-		  
+
 		  );
 		  $cards_meta_data = apply_filters( 'tcm_cards_meta_data',$cards_meta_data);
 		  twcm_render_meta_data($cards_meta_data);
-		  	 	  	
-			  
 
-      
+
+
+
     }
 	elseif(is_home()) # elseif of if(is_single() || is_page())
 	{
-	
-	
+
+
 
 			  $cards_meta_data=array(
 		  		"twitter:card" 		=> $twcm_options['default_card_type'],
@@ -96,9 +101,9 @@ $twcm_options=twcm_get_options();
 				"twitter:creator"	=> "@".$twcm_options['site_twitter_username'],
 				"twitter:url"		=> get_bloginfo('url'),
 				"twitter:title"		=> get_bloginfo('name'),
-				"twitter:description" => twcm_sub_string(esc_attr($twcm_options['home_page_description'])), 
+				"twitter:description" => twcm_sub_string(esc_attr($twcm_options['home_page_description'])),
 				"twitter:image"		=> $twcm_options['default_image']
-		  
+
 		  );
 		 $cards_meta_data = apply_filters( 'tcm_cards_meta_data',$cards_meta_data);
 		 twcm_render_meta_data($cards_meta_data);
@@ -129,7 +134,7 @@ function twcm_get_description()
 	$desc = '';
 	if( empty( $desc ) ) {
 		// Try Yoast metadesc first
-		$desc = get_post_meta( get_the_ID(), '_yoast_wpseo_metadesc', true ); 
+		$desc = get_post_meta( get_the_ID(), '_yoast_wpseo_metadesc', true );
 		if( empty( $desc ) ) {
 			$desc = trim( get_the_excerpt() );
 		}
@@ -168,7 +173,7 @@ function twcm_sub_string($text, $charlength=160) {
 	} else {
 		$retext .= $text;
 	}
-	
+
 	return $retext;
 }
 
@@ -186,11 +191,11 @@ function twcm_get_image()
 		$images = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 		$image  = $images[0];
 	}
-	
+
 	if($image=="")
 	{
 	  #get first image form post content
-	  $image = twcm_get_first_image($post->post_content);	  
+	  $image = twcm_get_first_image($post->post_content);
 	}
 	if($image==""){$image=$twcm_options['default_image'];}
 	return $image;
@@ -202,7 +207,7 @@ function twcm_get_first_image($text){
       ob_start();
       ob_end_clean();
       $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $text, $matches);
-      $first_img = isset($matches [1] [0]) ? $matches [1] [0] : '';	
+      $first_img = isset($matches [1] [0]) ? $matches [1] [0] : '';
      return $first_img;
     }
 
@@ -217,7 +222,7 @@ function twcm_setting_links($links, $file) {
     }
     return $links;
 }
-add_filter('plugin_action_links', 'twcm_setting_links', 10, 2);	
+add_filter('plugin_action_links', 'twcm_setting_links', 10, 2);
 
 //================== Add Extra TWITTER Field with user profile =========================
 
@@ -227,15 +232,15 @@ add_action( 'personal_options_update', 'twcm_save_extra_user_profile_fields' );
 add_action( 'edit_user_profile_update', 'twcm_save_extra_user_profile_fields' );
 
 function twcm_save_extra_user_profile_fields( $user_id ) {
- 
+
 if ( !current_user_can( 'edit_user', $user_id ) ) { return false; }
- 
+
 update_user_meta( $user_id, 'twcm_twitter', $_POST['twcm_twitter'] );
 }
 
 function twcm_extra_user_profile_fields( $user ) { ?>
 <h3>For Twitter Cards Meta</h3>
- 
+
 <table class="form-table">
 <tr>
 <th><label for="twcm_twitter">Twitter  User Name</label></th>
@@ -251,7 +256,7 @@ function twcm_extra_user_profile_fields( $user ) { ?>
 function twcm_add_meta_boxes()
 {
 
-	$post_types=get_post_types('','names'); 
+	$post_types=get_post_types('','names');
 	$rempost = array('attachment','revision','nav_menu_item');#exclude these post_types
 	$post_types = array_diff($post_types,$rempost);
 	foreach($post_types as $post_type)
@@ -275,9 +280,9 @@ global $post;
 	<input type="radio" name="twitter_card_type" id="twitter_card_type_default" value="default" <?php echo ($twitter_card_type=="default")?' checked="checked"':''; ?>/> <label for="twitter_card_type_default">Default<span style="color:#CCCCCC"> (<?php echo $twcm_options['default_card_type'];?>)</span></label><br /></p>
 	<p><input type="radio" name="twitter_card_type" id="twitter_card_type_summary" value="summary" <?php echo ($twitter_card_type=="summary")?' checked="checked"':''; ?>/> <label for="twitter_card_type_summary">Summary Card</label><br /></p>
 <!--	<p><input type="radio" name="twitter_card_type" id="twitter_card_type_photo" value="photo" <?php echo ($twitter_card_type=="photo")?' checked="checked"':''; ?>/> <label for="twitter_card_type_photo">Photo Card</label><br /></p> -->
-	
+
 	<?php do_action( 'tcm_addon_cmb' ); ?>
-	
+
 	<?php if( ! ACTIVE_LARGE_PHOTO ) { ?>
 	<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-SCLI"><b>Photo + Summary Card (Addon)</b></a></label><br /></p>
 	<?php } ?>
@@ -304,20 +309,20 @@ global $post;
 
 
 	<p><a target="blank" href="https://wpdeveloper.net/go/TCM-Setup"><b> Let us help setting up your Twitter Card</b></a></p>
-	
-	
+
+
 
 	<div id="tcm_addon_extra_field">
 	  <table width="100%">
 		    <?php do_action( 'tcm_addon_extra_field' ); ?>
 	  </table>
-	  
+
 	</div>
 	<input type="hidden" name="twcm_nonce" value="<?php echo wp_create_nonce('twcm_nonce')?>" />
 	</div>
 	<?php
 }#end function twcm_page_metabox()
-	
+
 function twcm_save_post_page_metabox($post_id)
 {
 	if(!isset($_POST['twitter_card_type'])){return $post_id;}
@@ -399,6 +404,6 @@ function tcm_post_editor_script() {
 		    });
 	  });
 	  </script>
-	  <?php 
+	  <?php
 	  do_action("tcm_post_editor_script");
 }
