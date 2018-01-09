@@ -82,7 +82,6 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 				$twitter_card_type = 'default';
 			}
 			?>
-			<h2 class="section-title">Twitter Card Options</h2>
 			<div class="tcm_card_options" id="tcm_card_options">
 				<p>
 					<input type="radio" name="twitter_card_type" id="twitter_card_type_default" value="default" <?php echo ($twitter_card_type=="default")?' checked="checked"':''; ?>/> <label for="twitter_card_type_default">Default<span style="color:#CCCCCC"> (<?php echo $twcm_options['default_card_type'];?>)</span></label>

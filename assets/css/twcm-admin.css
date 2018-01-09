@@ -23,12 +23,12 @@
 .twcm-summary-card {
 	display: flex;
 	justify-content: flex-start;
-	max-width: 50%;
+	max-width: 600px;
 	padding: 15px;
 	padding-left: 0px;
 }
 .twcm-summary-card .twcm-summary-card-left {
-	width: 125px;
+	min-width: 125px;
 	background-size: cover !important;
 	background-repeat: no-repeat !important;
 	background-position: top center !important;
