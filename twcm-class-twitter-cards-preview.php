@@ -14,6 +14,7 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 		public function __construct() {
 
 			add_action( 'add_meta_boxes', array( $this, 'twcm_core_add_metabox' ) );
+			add_action( 'save_post', array( $this, 'twcm_save_post_page_metabox' ) );
 
 		}
 
@@ -26,7 +27,7 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 			$screens = ['post', 'page'];
 				add_meta_box(
 					'twcm_core_page_settings',
-					'Twitter Cards Preview',
+					'Twitter Cards Meta',
 					array( $this, 'twcm_core_metabox_html' ),
 					$screens,
 					'normal',
@@ -35,11 +36,106 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 		}
 
 		/**
+		 * This method will save twcm card type otpions
+		 *
+		 * @since  2.5.5
+		 */
+		public function twcm_save_post_page_metabox( $post_id ) {
+
+			if( !isset( $_POST['twitter_card_type'] ) ) { return $post_id; }
+
+			//check nonce
+			if ( !isset( $_POST['twcm_nonce'] ) || !wp_verify_nonce( $_POST['twcm_nonce'], 'twcm_nonce' ) ) { return $post_id; }
+
+			//check capabilities
+			if ( !current_user_can( 'edit_post', $post_id ) ) { return $post_id; }
+
+			//exit on autosave
+			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) { return $post_id; }
+
+			//saving data
+			if( $_POST['twitter_card_type']=='default' ) {
+				delete_post_meta(
+					$post_id,
+					'_twcm_twitter_card_type'
+				);
+			}else {
+				update_post_meta(
+					$post_id,
+					'_twcm_twitter_card_type',
+					$_POST['twitter_card_type']
+				);
+			}
+
+		}
+
+		/**
+		 * This method will generate twcm card types markup. It is called into 'twcm_core_metabox_html' method.
+		 *
+		 * @since  2.5.5
+		 */
+		public function twcm_card_type_metaboxes() {
+			global $post;
+			$twcm_options=twcm_get_options();
+			$twitter_card_type=get_post_meta($post->ID,'_twcm_twitter_card_type', true);
+			if( $twitter_card_type == "" ) {
+				$twitter_card_type = 'default';
+			}
+			?>
+			<h2 class="section-title">Twitter Card Options</h2>
+			<div class="tcm_card_options" id="tcm_card_options">
+				<p>
+					<input type="radio" name="twitter_card_type" id="twitter_card_type_default" value="default" <?php echo ($twitter_card_type=="default")?' checked="checked"':''; ?>/> <label for="twitter_card_type_default">Default<span style="color:#CCCCCC"> (<?php echo $twcm_options['default_card_type'];?>)</span></label>
+				</p>
+				<p>
+					<input type="radio" name="twitter_card_type" id="twitter_card_type_summary" value="summary" <?php echo ($twitter_card_type=="summary")?' checked="checked"':''; ?>/> <label for="twitter_card_type_summary">Summary Card</label>
+				</p>
+				<!--<p><input type="radio" name="twitter_card_type" id="twitter_card_type_photo" value="photo" <?php echo ($twitter_card_type=="photo")?' checked="checked"':''; ?>/> <label for="twitter_card_type_photo">Photo Card</label><br /></p> -->
+
+				<?php do_action( 'tcm_addon_cmb' ); ?>
+
+				<?php if( ! ACTIVE_LARGE_PHOTO ) { ?>
+				<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-SCLI"><b>Photo + Summary Card (Addon)</b></a></label><br /></p>
+				<?php } ?>
+
+				<!--<?php if( ! ACTIVE_PRODUCT_CARD ) { ?>
+				<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-PC"><b>Product Card (Addon)</b></a></label><br /></p>
+				<?php } ?>
+
+				<?php if( ! ACTIVE_WOO_PRODUCT ) { ?>
+				<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-PCfWC">WooCommerce Product Card (Addon)</a></label><br /></p>
+				<?php } ?>
+
+				<?php if( ! ACTIVE_GALLERY_CARD ) { ?>
+				<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-GC">Gallery Card (Addon)</a></label><br /></p>
+				<?php } ?> -->
+
+				<?php if( ! ACTIVE_APP_CARD ) { ?>
+				<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-Survey">App Card (Addon - Coming Soon)</a></label><br /></p>
+				<?php } ?>
+
+				<?php if( ! ACTIVE_PLAYER_CARD ) { ?>
+				<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-Survey">Player Card (Addon - Coming Soon)</a></label><br /></p>
+				<?php } ?>
+				<p><a target="blank" href="https://wpdeveloper.net/go/TCM-Setup"><b> Let us help setting up your Twitter Card</b></a></p>
+
+				<div id="tcm_addon_extra_field">
+				  	<table width="100%">
+					    <?php do_action( 'tcm_addon_extra_field' ); ?>
+				  	</table>
+				</div>
+				<input type="hidden" name="twcm_nonce" value="<?php echo wp_create_nonce('twcm_nonce')?>" />
+			</div>
+			<?php
+		}
+
+		/**
 		 * This method will generate metabox markup
 		 *
 		 * @since  2.5.5
 		 */
 		public function twcm_core_metabox_html( $post ) {
+
 			// TWCM Meta Options
 			$twitter_card_type = get_post_meta( $post->ID,'_twcm_twitter_card_type', true );
 
@@ -52,9 +148,11 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 
 			// Striped Content
 			$striped_content = strip_tags( $post->post_content );
-			$striped_content = trim( preg_replace( '/\s+/', ' ', $striped_content ) );
+			$striped_content = trim( addslashes( preg_replace( '/\s+/', ' ', $striped_content ) ) );
 			?>
 			<div class="twcm-core-metabox-wrapper">
+				<?php $this->twcm_card_type_metaboxes(); ?>
+				<h2 class="section-title">Twitter Card Preview</h2>
 				<div id="twcm-append-preview"></div>
 			</div>
 

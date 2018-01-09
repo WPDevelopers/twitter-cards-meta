@@ -1,6 +1,25 @@
 /**
  *
  */
+.twcm-core-metabox-wrapper {}
+.twcm-core-metabox-wrapper .section-title {
+	font-size: 15px !important;
+    font-weight: 600;
+    display: inline-block;
+    border-bottom: .5px double #333;
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    border-width: 6px;
+}
+/* Card Types Styles */
+.tcm_card_options {
+	display: block;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dashed #8899A6;
+}
+/* Preview Styles */
 .twcm-summary-card {
 	display: flex;
 	justify-content: flex-start;
