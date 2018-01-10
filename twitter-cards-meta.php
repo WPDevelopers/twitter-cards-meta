@@ -26,6 +26,7 @@ define( 'ACTIVE_PLAYER_CARD', apply_filters( 'active_player_card', false ) );
 include_once(TWCM_PLUGIN_PATH.'twcm-options.php');
 include_once(TWCM_PLUGIN_PATH.'wpdev-dashboard-widget.php');
 include_once(TWCM_PLUGIN_PATH.'twcm-class-twitter-cards-preview.php');
+include_once(TWCM_PLUGIN_PATH.'includes/class-plugin-usage-tracker.php');
 
 /**
  * This fucntion will add a menu page
@@ -350,3 +351,22 @@ function tcm_post_editor_script() {
 	do_action( "tcm_post_editor_script" );
 }
 add_action( 'admin_head', 'tcm_post_editor_script' );
+
+// Optional usage tracker
+
+if( ! class_exists( 'Twcm_Plugin_Usage_Tracker') ) {
+    require_once dirname( __FILE__ ) . '/includes/class-plugin-usage-tracker.php';
+}
+if( ! function_exists( 'twitter_cards_meta_start_plugin_tracking' ) ) {
+    function twitter_cards_meta_start_plugin_tracking() {
+        $wisdom = new Twcm_Plugin_Usage_Tracker(
+            __FILE__,
+            'https://wpdeveloper.net',
+            array(),
+            true,
+            true,
+            1
+        );
+    }
+    twitter_cards_meta_start_plugin_tracking();
+}
