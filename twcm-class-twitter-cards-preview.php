@@ -89,12 +89,18 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 				<p>
 					<input type="radio" name="twitter_card_type" id="twitter_card_type_summary" value="summary" <?php echo ($twitter_card_type=="summary")?' checked="checked"':''; ?>/> <label for="twitter_card_type_summary">Summary Card</label>
 				</p>
+
+				<?php
+					/**
+					 * Custom TWCM hook to add more options.
+					 */
+					do_action( 'tcm_addon_cmb' );
+				?>
+
 				<!--<p><input type="radio" name="twitter_card_type" id="twitter_card_type_photo" value="photo" <?php echo ($twitter_card_type=="photo")?' checked="checked"':''; ?>/> <label for="twitter_card_type_photo">Photo Card</label><br /></p> -->
 
-				<?php do_action( 'tcm_addon_cmb' ); ?>
-
 				<?php if( ! ACTIVE_LARGE_PHOTO ) { ?>
-				<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-SCLI"><b>Photo + Summary Card (Addon)</b></a></label><br /></p>
+				<!-- <p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-SCLI"><b>Photo + Summary Card (Addon)</b></a></label><br /></p> -->
 				<?php } ?>
 
 				<!--<?php if( ! ACTIVE_PRODUCT_CARD ) { ?>
@@ -110,13 +116,12 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 				<?php } ?> -->
 
 				<?php if( ! ACTIVE_APP_CARD ) { ?>
-				<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-Survey">App Card (Addon - Coming Soon)</a></label><br /></p>
+				<!-- <p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-Survey">App Card (Addon - Coming Soon)</a></label><br /></p> -->
 				<?php } ?>
 
 				<?php if( ! ACTIVE_PLAYER_CARD ) { ?>
-				<p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-Survey">Player Card (Addon - Coming Soon)</a></label><br /></p>
+				<!-- <p><input type="radio" disabled="disabled"/> <label for="twitter_card_type_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-Survey">Player Card (Addon - Coming Soon)</a></label><br /></p> -->
 				<?php } ?>
-				<p><a target="blank" href="https://wpdeveloper.net/go/TCM-Setup"><b> Let us help setting up your Twitter Card</b></a></p>
 
 				<div id="tcm_addon_extra_field">
 				  	<table width="100%">
@@ -162,7 +167,11 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 
 					// Default State
 					if( twitterCardType == '' ) {
-						appendTo.html( twcm_default_html() );
+						<?php if( $twcm_options['default_card_type'] == 'summary' ) : ?>
+							appendTo.html( twcm_summary_html() );
+						<?php elseif( $twcm_options['default_card_type'] == 'summary_large_image' ) : ?>
+							appendTo.html( twcm_summary_large_image_html() );
+						<?php endif; ?>
 					}else if( twitterCardType == 'summary' ) {
 						appendTo.html( twcm_summary_html() );
 					}else if( twitterCardType == 'summary_large_image' ) {
@@ -173,27 +182,17 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 					$( 'input[name=twitter_card_type]' ).on( 'change', function() {
 						var cardType = $(this).val();
 						if( cardType == 'default' ) {
-							appendTo.html( twcm_default_html() );
+							<?php if( $twcm_options['default_card_type'] == 'summary' ) : ?>
+								appendTo.html( twcm_summary_html() );
+							<?php elseif( $twcm_options['default_card_type'] == 'summary_large_image' ) : ?>
+								appendTo.html( twcm_summary_large_image_html() );
+							<?php endif; ?>
 						}else if( cardType == 'summary' ) {
 							appendTo.html( twcm_summary_html() );
 						}else if( cardType == 'summary_large_image' ) {
 							appendTo.html( twcm_summary_large_image_html() );
 						}
 					});
-
-					// Default Card Style
-					function twcm_default_html() {
-
-						var html = '<div class="twcm-summary-card card-lg">';
-								html += '<div class="twcm-summary-card-right">';
-									html += '<h2 class="summary-card-title">'+twcm_get_the_title()+'</h2>';
-									html += '<p class="summary-card-desc">'+twcm_get_the_content()+'</p>';
-									html += '<small class="summary-card-link"><a href="'+twcm_get_permalink()+'">'+twcm_get_permalink()+'</a></small>';
-								html += '</div>';
-						html += '</div>';
-
-						return html;
-					}
 
 					// Summary Card Style
 					function twcm_summary_html() {

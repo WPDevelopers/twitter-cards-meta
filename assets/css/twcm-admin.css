@@ -1,5 +1,7 @@
 /**
- *
+ * =================================================================
+ * TWCM Styles
+ * =================================================================
  */
 .twcm-core-metabox-wrapper {}
 .twcm-core-metabox-wrapper .section-title {
@@ -14,10 +16,14 @@
 }
 /* Card Types Styles */
 .tcm_card_options {
-	display: block;
-	padding: 5px 10px;
+	display: flex;
+	padding: 15px 10px;
 	margin-bottom: 10px;
 	border-bottom: 1px dashed #8899A6;
+}
+.tcm_card_options p {
+	flex: 1 1 20%;
+	max-width: 20%;
 }
 /* Preview Styles */
 .twcm-summary-card {
