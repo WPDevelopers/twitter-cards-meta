@@ -2,8 +2,8 @@
 /*
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: https://wpdeveloper.net/go/TCM
- * Description: The Only Complete Twitter Cards Plugin in WordPress. Supports Summary Card with Large Image. Advance Automated settings.
- * Version: 2.5.4
+ * Description: The Most Advanced Twitter Cards Plugin in WordPress. Supports Summary Card with Large Image. Advance Automated settings with Preview.
+ * Version: 2.9.0
  * Author: WPDeveloper
  * Author URI: https://wpdeveloper.net
  * License: GPLv2+
@@ -290,9 +290,9 @@ function twcm_admin_notice() {
 		global $current_user ;
         $user_id = $current_user->ID;
         /* Check that the user hasn't already clicked to ignore the message */
-		if ( ! get_user_meta($user_id, 'twcm_ignore_notice254') ) {
+		if ( ! get_user_meta($user_id, 'twcm_ignore_notice290') ) {
 	        echo '<div class="updated"><p>';
-	        printf(__('<a href="https://wpdeveloper.net/go/wedevs-wp49-intro" target="_blank"><strong>WordPress 4.9</strong></a> is one of the biggest update in few years! <a href="https://wpdeveloper.net/go/wedevs-wp49-intro" target="_blank">Check out</a> the exciting new features and please <a href="https://wpdeveloper.net/go/rate-tcm" target="_blank">rate  <strong><em>Twitter Cards Meta</em> </strong></a>if you find us helpful!
+	        printf(__('Introducing <strong>Twitter Card Preview! </strong>Go to any post edit screen and look at the end of the post.
 	        	 <a href="%1$s">[Hide]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
 	        echo "</p></div>";
 		}
@@ -310,7 +310,7 @@ function twcm_nag_ignore() {
         $user_id = $current_user->ID;
         /* If user clicks to ignore the notice, add that to their user meta */
         if ( isset($_GET['twcm_nag_ignore']) && '0' == $_GET['twcm_nag_ignore'] ) {
-             add_user_meta($user_id, 'twcm_ignore_notice254', 'true', true);
+             add_user_meta($user_id, 'twcm_ignore_notice290', 'true', true);
 	}
 }
 add_action('admin_init', 'twcm_nag_ignore');

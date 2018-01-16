@@ -4,11 +4,11 @@ Donate link: https://wpdeveloper.net/go/TCM
 Tags: Twitter Card, Twitter Meta, Twitter Analytics, Twitter Cards, Meta Tag, Summary Card, Summary Card with Large Image, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Ecommerce Card, Social Meta, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
 Requires at least: 2.5.0
 Tested up to: 4.9
-Stable tag: 2.5.4
+Stable tag: 2.9.0
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The Best Twitter Card Plugin in WordPress. Supports Summary Card with Large Image. Easy & Automated Solution.
+The Best Twitter Card Plugin in WordPress. Supports Summary Card with Large Image. Easy & Automated Solution with Preview!
 
 
 
@@ -16,11 +16,12 @@ The Best Twitter Card Plugin in WordPress. Supports Summary Card with Large Imag
 
 = The Best Twitter Card Plugin for WordPress =
 
- **[Twitter Cards Meta](https://wpdeveloper.net/go/TCM)** by [WPDeveloper.net](https://wpdeveloper.net/) is the best Twitter Card plugin for WordPress. Adding Twitter Cards Meta was never this easy. 100% validate meta according to Twitter and get sure approval within minutes.
+ **[Twitter Cards Meta](https://wpdeveloper.net/go/TCM)** by [WPDeveloper.net](https://wpdeveloper.net/) is the best Twitter Card plugin for WordPress. Adding Twitter Cards Meta was never this easy. Automated Setting with preview!
 
  **Feature Includes:**
 
 *   Auto Add Twitter Cards Meta Tags in every single posts/pages.
+*   **[New]** Twitter Card Preview!
 *   For multi-author blog this plugin could add a extra field in 'Author Bio/Profile' page to add his own Twitter Account.
 *   Ability to get Attachment image automatically.
 *   **New** Compatible with Yoast SEO & All-in-One SEO plugin.
@@ -161,6 +162,10 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 
 == Changelog ==
+
+= 2.9.0 (January 16, 2018) =
+* Introducing Twitter Card Preview!
+* Restructure in progress for version 3.0.
 
 = 2.5.4 (November 16, 2017) =
 * Compatible with WordPress 4.9
@@ -333,8 +338,8 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Upgrade Notice ==
 
-= 2.5.4 =
-** [Minor Update] Undefined error temp fix, and compatible with WordPress 4.9.
+= 2.9.0 =
+** [Major Update] Introducing Preview. Must update.
 
 
 
