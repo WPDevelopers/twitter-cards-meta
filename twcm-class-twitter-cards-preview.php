@@ -91,7 +91,7 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 				</p>
 				<?php if( !function_exists( 'tcm_addon_cmb_cb' ) ) : ?>
 				<p class="option-muted">
-			    	<input type="radio" name="twitter_card_type_disabled" id="twitter_card_type_large_photo" value="summary_large_image" disabled/> <label for="twitter_card_type_large_photo">Summary Card with Large Image (Pro)</label>
+			    	<input type="radio" name="twitter_card_type_disabled" id="twitter_card_type_large_photo" value="summary_large_image" disabled/> <label for="twitter_card_type_large_photo"><a style="color:#CCCCCC;" target="blank" href="https://wpdeveloper.net/go/TCM-SCLI">Summary Card with Large Image (Pro)</a></label>
 			    </p>
 				<?php endif; ?>
 				<?php

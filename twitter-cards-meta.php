@@ -285,6 +285,7 @@ function twcm_extra_user_profile_fields( $user ) {
  *
  * @since  v1.0.0
  */
+
 function twcm_admin_notice() {
 	if ( current_user_can( 'install_plugins' ) ) {
 		global $current_user ;
@@ -292,13 +293,13 @@ function twcm_admin_notice() {
         /* Check that the user hasn't already clicked to ignore the message */
 		if ( ! get_user_meta($user_id, 'twcm_ignore_notice290') ) {
 	        echo '<div class="updated"><p>';
-	        printf(__('Introducing <strong>Twitter Card Preview! </strong>Go to any post edit screen and look at the end of the post.
+	        printf(__('Introducing <strong>Twitter Card Preview! </strong>Go to any post edit screen and look at the end of the post. Share your opinion <a href="https://wpdeveloper.net/in/TCM-Feedback">here</a>. We are actively working!
 	        	 <a href="%1$s">[Hide]</a>'),  admin_url( 'admin.php?page=twitter-cards-meta&twcm_nag_ignore=0' ));
 	        echo "</p></div>";
 		}
     }
 }
-add_action('admin_notices', 'twcm_admin_notice');
+/** add_action('admin_notices', 'twcm_admin_notice');
 
 /**
  * This function will generate nag ignore
@@ -314,6 +315,7 @@ function twcm_nag_ignore() {
 	}
 }
 add_action('admin_init', 'twcm_nag_ignore');
+ 
 
 /**
  * This function will generate editor scripts
