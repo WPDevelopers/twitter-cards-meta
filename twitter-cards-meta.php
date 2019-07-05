@@ -1,3 +1,4 @@
+
 <?php
 /*
  * Plugin Name: Twitter Cards Meta
@@ -15,6 +16,8 @@
 define("TWCM_PLUGIN_SLUG",'twitter-cards-meta');
 define("TWCM_PLUGIN_URL",plugins_url("",__FILE__ ));#without trailing slash (/)
 define("TWCM_PLUGIN_PATH",plugin_dir_path(__FILE__)); #with trailing slash (/)
+define('TWCM_PLUGIN_BASENAME', plugin_basename(__FILE__));
+define('TWCM_PLUGIN_VERSION', '2.9.0');
 
 define( 'ACTIVE_LARGE_PHOTO', apply_filters( 'active_large_photo', false ) );
 define( 'ACTIVE_WOO_PRODUCT', apply_filters( 'active_woo_product', false ) );
@@ -371,4 +374,30 @@ if( ! function_exists( 'twitter_cards_meta_start_plugin_tracking' ) ) {
         );
     }
     twitter_cards_meta_start_plugin_tracking();
+}
+
+if( ! class_exists( 'WPDeveloper_TCM_Notice' ) ) {
+	require_once dirname( __FILE__ ) . '/includes/class-wpdev-notices.php';
+
+	$notice = new WPDeveloper_TCM_Notice(TWCM_PLUGIN_BASENAME, TWCM_PLUGIN_VERSION);
+	/**
+	 * Current Notice End Time.
+	 * Notice will dismiss in 3 days if user does nothing.
+	 */
+	$notice->cne_time = '3 Day';
+	/**
+	 * Current Notice Maybe Later Time.
+	 * Notice will show again in 7 days
+	 */
+	$notice->maybe_later_time = '7 Day';
+
+	$notice->text_domain = 'twitter-cards-meta';
+
+	$notice->options_args = array(
+		'notice_will_show' => [
+			'opt_in' => $notice->timestamp,
+		],
+	);
+
+	$notice->init();
 }
