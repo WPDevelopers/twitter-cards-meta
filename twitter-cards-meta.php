@@ -1,4 +1,3 @@
-
 <?php
 /*
  * Plugin Name: Twitter Cards Meta
