@@ -369,8 +369,8 @@ if( ! function_exists( 'twitter_cards_meta_start_plugin_tracking' ) ) {
 			'item_id'      => '499fd55e8666c802e28a'
 		] );
 		$tracker->set_notice_options(array(
-			'notice' => __( 'Want to help make <strong>Twitter Cards Meta</strong> even more awesome? You can get a 25% discount coupon for premium addons if you allow.', 'disable-comments-on-attachments' ),
-			'extra_notice' => __( 'We collect non-sensitive diagnostic data and plugin usage information. Your site URL, WordPress & PHP version, plugins & themes and email address to send you the discount coupon. This data lets us make sure this plugin always stays compatible with the most popular plugins and themes. No spam, I promise.', 'disable-comments-on-attachments' ),
+			'notice' => __( 'Want to help make <strong>Twitter Cards Meta</strong> even more awesome? You can get a 25% discount coupon for premium addons if you allow.', 'twitter-cards-meta' ),
+			'extra_notice' => __( 'We collect non-sensitive diagnostic data and plugin usage information. Your site URL, WordPress & PHP version, plugins & themes and email address to send you the discount coupon. This data lets us make sure this plugin always stays compatible with the most popular plugins and themes. No spam, I promise.', 'twitter-cards-meta' ),
 		));
 		$tracker->init();
     }
