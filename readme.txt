@@ -3,8 +3,8 @@ Contributors: Asif2BD, wpdevteam, onetarek, re_enter_rupok
 Donate link: https://wpdeveloper.net/go/TCM
 Tags: Twitter Card, Twitter Meta, Twitter Analytics, Twitter Cards, Meta Tag, Summary Card, Summary Card with Large Image, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Ecommerce Card, Social Meta, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
 Requires at least: 2.5.0
-Tested up to: 4.9
-Stable tag: 2.9.0
+Tested up to: 5.5.1
+Stable tag: 2.9.1
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,12 +30,12 @@ The Best Twitter Card Plugin in WordPress. Supports Summary Card with Large Imag
 *   Possible to add Twitter Cards meta tags even in Home Page.
 *   You could include a custom Description for Home Page.
 *   Though its not a good practice but you could include a default Image, its specially helpful for home page.
-*   **Addon supported** 
-*   **Summary Card with Large Image added as Addon** 
+*   **Addon supported**
+*   **Summary Card with Large Image added as Addon**
 *   Photo Card Support Added.
 *   Ability to select **'Card Type'** per post basis or site-wide.
 *   Meta Box in post panel to select individual post's 'Card Type'.
-*   Option to force all posts (old and future posts) to a certain 'Cards Type'. It will override individual post's selection. 
+*   Option to force all posts (old and future posts) to a certain 'Cards Type'. It will override individual post's selection.
 *   Now Attached and Featured image both work properly and user have the option to select which type of image he wants.
 *   Validate 100% with W3C Markup Validation Service!
 
@@ -57,7 +57,7 @@ Please read Twitter Cards' detail [guideline and terms](https://dev.twitter.com/
 *   Player Card [(coming soon)](https://wpdeveloper.net/go/TCM-Survey)
 
 
-**[Twitter Cards Meta](https://wpdeveloper.net/go/TCM) [Setup Service](https://wpdeveloper.net/go/TCM-Setup)!!!** 
+**[Twitter Cards Meta](https://wpdeveloper.net/go/TCM) [Setup Service](https://wpdeveloper.net/go/TCM-Setup)!!!**
 
 Let us help, we have team of Avenger! We could help you setup Twitter Cards Meta. We will make your website ready for Twitter Card. You sit back and watch your Twitter grow!
 
@@ -74,8 +74,8 @@ Though there are other possible ways to add Twitter Cards metadata but this plug
 You could say there are other process like adding codes manually in your theme header, or using famous SEO plugins like "WordPress SEO by Yoast" or other plugin that claim to serve same like this plugin, but why we are the best? Here is our point -
 
 *  All other plugin either need per post configuration or they just cant handle more then one type Card. With **Twitter Card Meta** you could configure **one article post as Summary Card and another image heavy post as Photo Card**, and you don't have to pick image, description etc manually on any of those post. Just install and you will understand the difference.
-*  With other plugin you can't change Card type sitewide all together. **Twitter Card Meta** let you do that. 
-*  This plugin is extendable, we are releasing all new Card type Twitter release as addon, so you never loose your setting, and could adopt your site with any Card type in future. 
+*  With other plugin you can't change Card type sitewide all together. **Twitter Card Meta** let you do that.
+*  This plugin is extendable, we are releasing all new Card type Twitter release as addon, so you never loose your setting, and could adopt your site with any Card type in future.
 *   None other solution works perfectly with image. All other plugins only depend on WordPress Attachment. But from our years of experience we have seen image attachment does not work for most of the sites and themes.
 *   Other plugin will mostly use your default image as they cant grab image properly, even "WordPress SEO by Yoast" does the same. But please read the Twitter Cards' [guideline and terms](https://dev.twitter.com/docs/cards) guideline about image. It clearly says 'Do not use a generic image such as your website logo, author photo, or other image that spans multiple pages.' So if you end up using default image for most posts, you will probably never get approved in Twitter Cards.
 *   This plugin does the markup in right way, and in right position.
@@ -92,14 +92,14 @@ The main thing is, we had to make this plugin as other solution did not worked f
 
 **WPSolver.com** [saying](http://www.wpsolver.com/twitter-cards-plugins-wordpress/)
 
-"*Twitter Cards Meta: enables summary and photo cards on your site. You will be able to customize your cards’ settings. It also works for sites with multiple authors."*
+"*Twitter Cards Meta: enables summary and photo cards on your site. You will be able to customize your cardsï¿½ settings. It also works for sites with multiple authors."*
 
 
 == Installation ==
 
 = Modern Way: =
 1. Go to the WordPress Dashboard "Add New Plugin" section.
-2. Search For "Twitter Cards Meta". 
+2. Search For "Twitter Cards Meta".
 3. Install, then Activate it.
 
 = Old Way: =
@@ -112,13 +112,13 @@ The main thing is, we had to make this plugin as other solution did not worked f
 1. Activate the Plugin.
 2. Follow the easy steps from the plugin Setting page **sidebar**.
 
-You are good to go! 
+You are good to go!
 
 **For more detail guide you should follow [this](https://wpdeveloper.net/go/TCM-Ins) page.**
 
 [youtube http://www.youtube.com/watch?v=f1q3bgKbq_U]
 
-**[Twitter Cards Meta](https://wpdeveloper.net/go/TCM) [Setup Service](https://wpdeveloper.net/go/TCM-Setup)!!!** 
+**[Twitter Cards Meta](https://wpdeveloper.net/go/TCM) [Setup Service](https://wpdeveloper.net/go/TCM-Setup)!!!**
 Let us help, we have team of Avenger! We could help you setup Twitter Cards Meta. We will make your website ready for Twitter Card. You sit back and watch your Twitter grow!
 
 
@@ -162,6 +162,11 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 
 == Changelog ==
+
+= 2.9.1 (September 24, 2020) =
+* Fixed Image Preview Issue.
+* Overall Improvements
+* Tested Upto WP 5.5.1
 
 = 2.9.0 (January 16, 2018) =
 * Introducing Twitter Card Preview!
@@ -209,9 +214,9 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 * Compatible to WordPress 4.4.1
 
 = 2.4.0 (November 03, 2015) =
-* Important update! Technical changes for better addon compatibility. 
+* Important update! Technical changes for better addon compatibility.
 * Compatible with our upcoming Player Card addons
-* Importent Bug Fix 
+* Importent Bug Fix
 
 = 2.3.0 (August 21, 2015) =
 * Compatible with recent changes by Twitter. Photo Card, Gallery Card & Product Card are now deprecate by Twitter itself.
@@ -251,7 +256,7 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 = 2.1.1 (May 07, 2015) =
 * Compatible with WordPress 4.2.2
 * Security check
-* Card Setup Service Added 
+* Card Setup Service Added
 
 
 = 2.1.0 (April 21, 2015) =
@@ -286,10 +291,10 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 * Summary Card with Large Image available as addon
 * All big fix
 * Better option handle.
- 
+
 
 = 1.1.7 (February 12, 2015) =
-* Minor bug fix, tested upto WordPress 4.2 Beta 
+* Minor bug fix, tested upto WordPress 4.2 Beta
 
 
 = 1.1.6 (January 13, 2015) =

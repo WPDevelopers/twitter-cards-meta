@@ -3,13 +3,13 @@
  * Plugin Name: Twitter Cards Meta
  * Plugin URI: https://wpdeveloper.net/go/TCM
  * Description: The Most Advanced Twitter Cards Plugin in WordPress. Supports Summary Card with Large Image. Advance Automated settings with Preview.
- * Version: 2.9.0
+ * Version: 2.9.1
  * Author: WPDeveloper
  * Author URI: https://wpdeveloper.net
  * License: GPLv2+
  * Text Domain: twitter-cards-meta
  * Min WP Version: 2.5.0
- * Max WP Version: 4.9
+ * Max WP Version: 5.5.1
  */
 
 define("TWCM_PLUGIN_SLUG",'twitter-cards-meta');
@@ -317,7 +317,7 @@ function twcm_nag_ignore() {
 	}
 }
 add_action('admin_init', 'twcm_nag_ignore');
- 
+
 
 /**
  * This function will generate editor scripts
@@ -363,14 +363,16 @@ if( ! class_exists( 'Twcm_Plugin_Usage_Tracker') ) {
 }
 if( ! function_exists( 'twitter_cards_meta_start_plugin_tracking' ) ) {
     function twitter_cards_meta_start_plugin_tracking() {
-        $wisdom = new Twcm_Plugin_Usage_Tracker(
-            __FILE__,
-            'https://wpdeveloper.net',
-            array(),
-            true,
-            true,
-            1
-        );
+        $tracker = Twcm_Plugin_Usage_Tracker::get_instance( __FILE__, [
+			'opt_in'       => true,
+			'goodbye_form' => true,
+			'item_id'      => '499fd55e8666c802e28a'
+		] );
+		$tracker->set_notice_options(array(
+			'notice' => __( 'Want to help make <strong>Twitter Cards Meta</strong> even more awesome? You can get a 25% discount coupon for premium addons if you allow.', 'disable-comments-on-attachments' ),
+			'extra_notice' => __( 'We collect non-sensitive diagnostic data and plugin usage information. Your site URL, WordPress & PHP version, plugins & themes and email address to send you the discount coupon. This data lets us make sure this plugin always stays compatible with the most popular plugins and themes. No spam, I promise.', 'disable-comments-on-attachments' ),
+		));
+		$tracker->init();
     }
     twitter_cards_meta_start_plugin_tracking();
 }
