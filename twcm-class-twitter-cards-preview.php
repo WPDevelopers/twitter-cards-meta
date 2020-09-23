@@ -152,7 +152,10 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 
 			// Get the post feature image
 			$images = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-			$image  = $images[0];
+			$image = '';
+			if( ! empty( $images ) && is_array( $images ) ) {
+				$image  = $images[0];
+			}
 
 			// Striped Content
 			$striped_content = strip_tags( $post->post_content );
@@ -202,7 +205,10 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 					function twcm_summary_html() {
 
 						var html = '<div class="twcm-summary-card">';
-								html += '<div class="twcm-summary-card-left" style="background:url('+twcm_get_the_image()+');"></div>';
+								var img = twcm_get_the_image();
+								if( img !== '' ) {
+									html += '<div class="twcm-summary-card-left" style="background:url('+ img +');"></div>';
+								}
 								html += '<div class="twcm-summary-card-right">';
 									html += '<h2 class="summary-card-title">'+twcm_get_the_title()+'</h2>';
 									html += '<p class="summary-card-desc">'+twcm_get_the_content()+'</p>';
@@ -217,7 +223,10 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 					function twcm_summary_large_image_html() {
 
 						var html = '<div class="twcm-summary-card card-lg">';
-								html += '<div class="twcm-summary-card-left" style="background:url('+twcm_get_the_image()+');"></div>';
+								var img = twcm_get_the_image();
+								if( img !== '' ) {
+									html += '<div class="twcm-summary-card-left" style="background:url('+ img +');"></div>';
+								}
 								html += '<div class="twcm-summary-card-right">';
 									html += '<h2 class="summary-card-title">'+twcm_get_the_title()+'</h2>';
 									html += '<p class="summary-card-desc">'+twcm_get_the_content()+'</p>';
