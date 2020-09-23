@@ -203,10 +203,11 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 
 					// Summary Card Style
 					function twcm_summary_html() {
-
 						var img = twcm_get_the_image();
 						var html = '<div class="twcm-summary-card">';
-								html += '<div class="twcm-summary-card-left" style="background:url('+ img +');"></div>';
+								if( img != '' ) {
+									html += '<div class="twcm-summary-card-left" style="background:url('+ img +');"></div>';
+								}
 								html += '<div class="twcm-summary-card-right">';
 									html += '<h2 class="summary-card-title">'+twcm_get_the_title()+'</h2>';
 									html += '<p class="summary-card-desc">'+twcm_get_the_content()+'</p>';
@@ -222,7 +223,9 @@ if( ! class_exists( 'TWCM_Twitter_Cards_Preview' ) ) {
 
 						var html = '<div class="twcm-summary-card card-lg">';
 								var img = twcm_get_the_image();
-								html += '<div class="twcm-summary-card-left" style="background:url('+ img +');"></div>';
+								if( img != '' ) {
+									html += '<div class="twcm-summary-card-left" style="background:url('+ img +');"></div>';
+								}
 								html += '<div class="twcm-summary-card-right">';
 									html += '<h2 class="summary-card-title">'+twcm_get_the_title()+'</h2>';
 									html += '<p class="summary-card-desc">'+twcm_get_the_content()+'</p>';
