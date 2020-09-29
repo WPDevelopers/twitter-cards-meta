@@ -79,7 +79,7 @@ if( ! class_exists('Twcm_Plugin_Usage_Tracker') ) :
 			$this->include_goodbye_form = isset( $args['goodbye_form'] ) ? $args['goodbye_form'] : true;
 			$this->marketing            = isset( $args['email_marketing'] ) ? $args['email_marketing'] : true;
 			$this->options              = isset( $args['options'] ) ? $args['options'] : [];
-			$this->item_id       = isset( $args['item_id'] ) ? $args['item_id'] : false;
+			$this->item_id              = isset( $args['item_id'] ) ? $args['item_id'] : false;
 			/**
 			 * Deactivation Hook
 			 */
@@ -146,7 +146,7 @@ if( ! class_exists('Twcm_Plugin_Usage_Tracker') ) :
 			 */
 			add_filter( 'plugin_action_links_' . plugin_basename( $this->plugin_file ), array( $this, 'deactivate_action_links' ) );
 			add_action( 'admin_footer-plugins.php', array( $this, 'deactivate_reasons_form' ) );
-			add_action( 'wp_ajax_deactivation_form__' . esc_attr( $this->plugin_name ), array( $this, 'deactivate_reasons_form_submit' ) );
+			add_action( 'wp_ajax_deactivation_form_' . esc_attr( $this->plugin_name ), array( $this, 'deactivate_reasons_form_submit' ) );
 		}
 		/**
 		 * For Redirecting Current Page without Arguments!
