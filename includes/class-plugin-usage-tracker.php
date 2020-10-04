@@ -580,16 +580,6 @@ if( ! class_exists('Twcm_Plugin_Usage_Tracker') ) :
 			if ( ! current_user_can( 'manage_options' ) ) {
 				return;
 			}
-			// Don't bother asking user to opt in if they're in local dev
-			$is_local = false;
-			if( stristr( network_site_url( '/' ), '.local' ) !== false ) {
-				$is_local = true;
-			}
-			$is_local = apply_filters( 'wpins_is_local_' . $this->plugin_name, $is_local );
-			if( $is_local ) {
-				$this->update_block_notice();
-				return;
-			}
 
 			$url_yes = add_query_arg( [
 				'plugin'          => $this->plugin_name,
