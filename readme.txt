@@ -163,7 +163,7 @@ More FAQs - [here](https://wpdeveloper.net/free-plugin/twitter-cards-meta/#tab3)
 
 == Changelog ==
 
-= 2.9.1 (September 24, 2020) =
+= 2.9.1 (October 04, 2020) =
 * Fixed Image Preview Issue.
 * Overall Improvements
 * Tested Upto WP 5.5.1
