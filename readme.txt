@@ -5,8 +5,8 @@ Tags: Twitter Card, Twitter Meta, Twitter Analytics, Twitter Cards, Meta Tag, Su
 Requires at least: 2.5.0
 Tested up to: 5.5.1
 Stable tag: 2.9.1
-License: GPLv2+
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPL-3.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 The Best Twitter Card Plugin in WordPress. Supports Summary Card with Large Image. Easy & Automated Solution with Preview!
 

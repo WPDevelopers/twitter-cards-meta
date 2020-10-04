@@ -6,7 +6,7 @@
  * Version: 2.9.1
  * Author: WPDeveloper
  * Author URI: https://wpdeveloper.net
- * License: GPLv2+
+ * License: GPL-3.0+
  * Text Domain: twitter-cards-meta
  * Min WP Version: 2.5.0
  * Max WP Version: 5.5.1
