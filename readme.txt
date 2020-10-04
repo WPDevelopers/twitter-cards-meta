@@ -1,5 +1,5 @@
 === Twitter Cards Meta - Best Twitter Card Plugin for WordPress ===
-Contributors: Asif2BD, wpdevteam, onetarek, re_enter_rupok
+Contributors: Asif2BD, wpdevteam, onetarek, re_enter_rupok, priyomukul
 Donate link: https://wpdeveloper.net/go/TCM
 Tags: Twitter Card, Twitter Meta, Twitter Analytics, Twitter Cards, Meta Tag, Summary Card, Summary Card with Large Image, Twitter SEO, Twitter Meta, Twitter, Player Cards, Add Twitter Meta, Ecommerce Card, Social Meta, Tweet Design, App Card, SEO Meta, Twitter, Player Card, Cards, Twitter Ads
 Requires at least: 2.5.0
@@ -16,7 +16,7 @@ The Best Twitter Card Plugin in WordPress. Supports Summary Card with Large Imag
 
 = The Best Twitter Card Plugin for WordPress =
 
- **[Twitter Cards Meta](https://wpdeveloper.net/go/TCM)** by [WPDeveloper.net](https://wpdeveloper.net/) is the best Twitter Card plugin for WordPress. Adding Twitter Cards Meta was never this easy. Automated Setting with preview!
+ **[Twitter Cards Meta](https://wpdeveloper.net/go/TCM)** by [WPDeveloper](https://wpdeveloper.net/) is the best Twitter Card plugin for WordPress. Adding Twitter Cards Meta was never this easy. Automated Setting with preview!
 
  **Feature Includes:**
 

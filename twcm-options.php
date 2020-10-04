@@ -2,7 +2,7 @@
 function twcm_get_options()
 {
     $options = array(
-        'site_twitter_username'          => 'WPDevTeam',
+        'site_twitter_username'          => 'Twitter',
         'use_authors_twitter_account'    => 0, 
         'use_image_from'                 => "first_image",
         'image_custom_field'             => 'image', 
@@ -68,7 +68,7 @@ function twcm_options_page()
             </script>
             <form action="" method="post">
             <table class="form-table">
-            <tr><td  align="left" width="200">Site's Main Twitter Account:</td><td>@<input type="text" name="site_twitter_username" value="<?php echo ($twcm_options['site_twitter_username'])? $twcm_options['site_twitter_username'] :'WPDevTeam';?>" size="20"  onblur="javascript: if(this.value=='') {this.value='WPDevTeam';}" onclick="javascript: if(this.value=='WPDevTeam') {this.value='';}"  /></td></tr>
+            <tr><td  align="left" width="200">Site's Main Twitter Account:</td><td>@<input type="text" name="site_twitter_username" value="<?php echo ($twcm_options['site_twitter_username'])? $twcm_options['site_twitter_username'] :'Twitter';?>" size="20"  onblur="javascript: if(this.value=='') {this.value='Twitter';}" onclick="javascript: if(this.value=='Twitter') {this.value='';}"  /></td></tr>
             
             <tr><td  align="left">Use Authors' Twitter Account</td><td><input type="checkbox" name="use_authors_twitter_account" value="1" <?php echo ($twcm_options['use_authors_twitter_account'])?' checked="checked"': '';?> /></td></tr>
             

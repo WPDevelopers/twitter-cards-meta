@@ -16,7 +16,7 @@ define("TWCM_PLUGIN_SLUG",'twitter-cards-meta');
 define("TWCM_PLUGIN_URL",plugins_url("",__FILE__ ));#without trailing slash (/)
 define("TWCM_PLUGIN_PATH",plugin_dir_path(__FILE__)); #with trailing slash (/)
 define('TWCM_PLUGIN_BASENAME', plugin_basename(__FILE__));
-define('TWCM_PLUGIN_VERSION', '2.9.0');
+define('TWCM_PLUGIN_VERSION', '2.9.1');
 
 define( 'ACTIVE_LARGE_PHOTO', apply_filters( 'active_large_photo', false ) );
 define( 'ACTIVE_WOO_PRODUCT', apply_filters( 'active_woo_product', false ) );
